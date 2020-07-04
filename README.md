@@ -21,3 +21,6 @@ $ yarn dev
 ```
 ## Design
 No Design layout images such as AdobeXD file is provided.
+
+# contact
+If you want to contact me, send an e-mail to ``hero.key629522[at]gmail.com`` (replace [at] with @)
