@@ -1,56 +1,81 @@
 <template>
-  <div>top</div>
+  <div class="whole__container">
+    <img class="background__image" :src="require('@/assets/img/TopPage/TopBackground.png')">
+    <div class="content__container">
+      <section class="content__pagetitle">
+        Hiroki Kobayashi<br>design portfolio
+      </section>
+      <section class="content__toc">
+        <top-toc-element v-for="content in topContents" :key="content.name" :content="content.name" />
+      </section>
+      <section class="content__profile">
+        <top-profile />
+      </section>
+    </div>
+  </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-// import { Logo } from '@/components'
+import {
+  TopTocElement,
+  TopProfile
+} from '@/components'
 
 @Component({
   components: {
-    // Logo
+    TopTocElement,
+    TopProfile
   }
 })
-export default class Index extends Vue {}
+export default class Index extends Vue {
+  public topContents = [
+    { name: 'Profile' },
+    { name: 'Works' },
+    { name: 'Contact' }
+  ]
+}
 </script>
 
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+<style lang="scss" scoped>
+.whole {
+  &__conotainer {
+    position: relative;
+    width: 100vw;
+  }
 }
-
-.title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
+.background {
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+  }
 }
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+.content {
+  &__container {
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0 8%;
+  }
+  &__pagetitle {
+    color: #fcedcf;
+    font-family: adobe-garamond-pro;
+    font-size: 5vw;
+    // margin-right: 8%;
+    margin-top: 30%;
+    text-align: right;
+  }
+  &__toc {
+    margin-top: 3%;
+  }
+  &__profile {
+    margin: 10% 0 0 33%;
+  }
 }
 </style>

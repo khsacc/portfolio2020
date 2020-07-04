@@ -1,5 +1,7 @@
-// import Logo from './Logo.vue'
+import TopTocElement from './TopPage/TopTocElement.vue'
+import TopProfile from './TopPage/TopProfile.vue'
 
 export {
-  // Logo
+  TopTocElement,
+  TopProfile
 }
