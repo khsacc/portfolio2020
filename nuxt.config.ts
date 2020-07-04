@@ -1,9 +1,6 @@
+import { Configuration } from '@nuxt/types'
 
-export default {
-  /*
-  ** Nuxt rendering mode
-  ** See https://nuxtjs.org/api/configuration-mode
-  */
+const nuxtConfig:Configuration = {
   mode: 'universal',
   /*
   ** Nuxt target
@@ -15,7 +12,7 @@ export default {
   ** See https://nuxtjs.org/api/configuration-head
   */
   head: {
-    title: process.env.npm_package_name || '',
+    title: 'Hiroki Kobayashi Design Portfolio',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -36,26 +33,25 @@ export default {
   */
   plugins: [
   ],
-  /*
-  ** Auto import components
-  ** See https://nuxtjs.org/api/configuration-components
-  */
   components: true,
-  /*
-  ** Nuxt.js dev-modules
-  */
   buildModules: [
     '@nuxt/typescript-build'
   ],
-  /*
-  ** Nuxt.js modules
-  */
   modules: [
   ],
-  /*
-  ** Build configuration
-  ** See https://nuxtjs.org/api/configuration-build/
-  */
   build: {
+    html: {
+      minify: {
+        collapseWhitespace: true
+      }
+    }
+  },
+  typescript: {
+    typecheck: {
+      eslint: true,
+      ignoreNotFoundWarnings: true
+    }
   }
 }
+
+export default nuxtConfig
