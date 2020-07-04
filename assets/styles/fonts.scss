@@ -1,0 +1,7 @@
+@mixin fonts($kind) {
+  $fontList: (
+    sans-serif: ('adobe-garamond-pro')
+  );
+
+  font-family: map-get($map: $fontList, $key: $kind);
+}
