@@ -91,3 +91,6 @@ sw.*
 
 # vscode settings
 .vscode/
+
+# my memo files
+memo/
