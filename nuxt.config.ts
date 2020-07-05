@@ -21,6 +21,7 @@ const nuxtConfig:Configuration = {
   css: [
   ],
   plugins: [
+    '@/plugins/vue-scrollto'
   ],
   components: true,
   buildModules: [
