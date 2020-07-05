@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Nuxt />
+    <Nuxt class="nuxtpage__container" />
     <Footer />
   </div>
 </template>
@@ -30,6 +30,12 @@ html {
 *::after {
   box-sizing: border-box;
   margin: 0;
+}
+
+.nuxtpage {
+  &__container {
+    min-height: 100vh;
+  }
 }
 
 </style>
