@@ -1,4 +1,4 @@
-# Portofolio2020
+# Portfolio2020
 
 Hiroki Kobayashi's design portfolio in 2020. Thank you for visiting my GitHub repository!
 
