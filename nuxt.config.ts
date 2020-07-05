@@ -2,10 +2,6 @@ import { Configuration } from '@nuxt/types'
 
 const nuxtConfig:Configuration = {
   mode: 'universal',
-  /*
-  ** Nuxt target
-  ** See https://nuxtjs.org/api/configuration-target
-  */
   target: 'server',
   head: {
     title: 'Hiroki Kobayashi | Nightie Night',
@@ -23,7 +19,6 @@ const nuxtConfig:Configuration = {
     ]
   },
   css: [
-    '@/assets/styles/fonts.scss'
   ],
   plugins: [
   ],
@@ -32,7 +27,13 @@ const nuxtConfig:Configuration = {
     '@nuxt/typescript-build'
   ],
   modules: [
+    '@nuxtjs/style-resources'
   ],
+  styleResources: {
+    scss: [
+      '@/assets/styles/main.scss'
+    ]
+  },
   build: {
     html: {
       minify: {

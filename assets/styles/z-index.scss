@@ -1,0 +1,5 @@
+@mixin z-index($element) {
+  z-index: map-get((
+    nuxtpage__background: -1
+  ), $element);
+}
