@@ -7,16 +7,17 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import { Component, Vue } from 'vue-property-decorator'
 import {
   Footer
 } from '@/components'
 
-export default Vue.extend({
+@Component({
   components: {
     Footer
   }
 })
+export default class Default extends Vue {}
 </script>
 
 <style lang="scss">
