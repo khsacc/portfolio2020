@@ -2,6 +2,8 @@
 
 Hiroki Kobayashi's design portfolio in 2020. Thank you for visiting my GitHub repository!
 
+**This website is under construction.**
+
 ## Overview
 * This is Nuxt.js project with the Typescript support.
 * The use of Typescript is based on vue-property-decorator.
