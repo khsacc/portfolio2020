@@ -1,6 +1,5 @@
 <template>
   <div class="whole__container">
-    <img class="background__image" :src="require('@/assets/img/TopPage/TopBackground.png')">
     <div class="content__container">
       <div>
         <section class="content__pagetop">
@@ -9,19 +8,13 @@
           </div>
           <div class="content__pagetop--subtitle">
             DTP designer<br>
-            Design Portfolio Website "Nightie Night"
+            Design Portfolio Website
           </div>
         </section>
         <section class="content__toc">
           <top-toc-element v-for="content in topContents" :key="content.name" :content="content.name" />
         </section>
       </div>
-      <!-- <section id="Profile" class="content__profile">
-        <top-profile />
-      </section> -->
-      <!-- <section id="Works" class="content__works">
-        <top-works />
-      </section> -->
     </div>
   </div>
 </template>
@@ -73,12 +66,9 @@ export default class Index extends Vue {
 .content {
   &__container {
     color: white;
-    position: absolute;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
     padding: 0 8%;
@@ -95,7 +85,7 @@ export default class Index extends Vue {
     }
 
     &--subtitle {
-      font-size: 1.5vw;
+      font-size: 2vw;
     }
   }
   &__toc {

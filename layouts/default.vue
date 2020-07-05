@@ -1,6 +1,7 @@
 <template>
   <div>
-    <Nuxt class="nuxtpage__container" />
+    <img class="nuxtpage__background" :src="require('@/assets/img/TopPage/TopBackground.png')">
+    <Nuxt class="nuxtpage__eachpage" />
     <Footer />
   </div>
 </template>
@@ -33,7 +34,20 @@ html {
 }
 
 .nuxtpage {
-  &__container {
+  &__background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    object-position: 0 8%;
+
+    @include z-index(nuxtpage__background)
+  }
+
+  &__eachpage {
     min-height: 100vh;
   }
 }
