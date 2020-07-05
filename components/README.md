@@ -1,7 +1,5 @@
-# COMPONENTS
+# Components
 
-**This directory is not required, you can delete it if you don't want to use it.**
-
-The components directory contains your Vue.js Components.
-
-_Nuxt.js doesn't supercharge these components._
+* All Vue components which would be used in the pages should be exported in ``index.ts`` in this directory.
+* Do not import any components directly into the page file, just ``from '@/components'``
+* If you need to import some component to another component, you should import directory, not ``from '@/components'``.
