@@ -36,20 +36,21 @@ export default class FooterTocElement extends Vue {
 
         &--before {
           display: inline-block;
-          position: absolute;
-          bottom: -10%;
-          left: 0;
+          // position: absolute;
+          // bottom: -10%;
+          // left: 0;
           width: 0;
           height: 1.25px;
           background: white;
-          font-size: 4vw;
+          // font-size: 4vw;
           transition-duration: 0.5s;
           opacity: 0;
+          vertical-align: middle;
         }
 
         &:hover .toc__content--text--before {
           background: #f7dba4;
-          width: 100%;
+          width: 15px;
           opacity: 1;
         }
       }

@@ -4,12 +4,12 @@
       <div class="footer__name--title">
         <!-- "Nightie Night" -->
       </div>
-      <div class="footer__name--description">
+      <nuxt-link to="/" class="footer__name--description">
         Hiroki Kobayashi<br>
         Design Portfolio Website
-      </div>
+      </nuxt-link>
     </div>
-    <div>
+    <div class="footer__toc--container">
       <footer-toc-element v-for="page in ['Profile', 'Works', 'Contact']" :key="page" :content="page" />
     </div>
   </footer>
@@ -39,15 +39,24 @@ export default class Footer extends Vue {}
   }
 
   &__name {
-    padding: 0 5%;
+    padding-right: 5%;
     text-align: right;
     font-family: adobe-garamond-pro;
     font-size: 20px;
-    color: #eccb98;
 
-    &--title {
-      font-size: 30px;
+    // &--title {
+    //   font-size: 30px;
+    // }
+
+    &--description {
+      display: block;
+      text-decoration: none;
+      color: #eccb98;
     }
+  }
+
+  &__toc--container {
+    width: 90px;
   }
 }
 </style>
