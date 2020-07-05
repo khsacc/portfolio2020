@@ -2,15 +2,26 @@
   <div class="whole__container">
     <img class="background__image" :src="require('@/assets/img/TopPage/TopBackground.png')">
     <div class="content__container">
-      <section class="content__pagetitle">
-        Hiroki Kobayashi<br>design portfolio
-      </section>
-      <section class="content__toc">
-        <top-toc-element v-for="content in topContents" :key="content.name" :content="content.name" />
-      </section>
-      <section class="content__profile">
+      <div>
+        <section class="content__pagetop">
+          <div class="content__pagetop--title">
+            Hiroki Kobayashi
+          </div>
+          <div class="content__pagetop--subtitle">
+            DTP designer<br>
+            Design Portfolio Website "Nightie Night"
+          </div>
+        </section>
+        <section class="content__toc">
+          <top-toc-element v-for="content in topContents" :key="content.name" :content="content.name" />
+        </section>
+      </div>
+      <!-- <section id="Profile" class="content__profile">
         <top-profile />
-      </section>
+      </section> -->
+      <!-- <section id="Works" class="content__works">
+        <top-works />
+      </section> -->
     </div>
   </div>
 </template>
@@ -19,13 +30,15 @@
 import { Component, Vue } from 'vue-property-decorator'
 import {
   TopTocElement,
-  TopProfile
+  TopProfile,
+  TopWorks
 } from '@/components'
 
 @Component({
   components: {
     TopTocElement,
-    TopProfile
+    TopProfile,
+    TopWorks
   }
 })
 export default class Index extends Vue {
@@ -39,9 +52,10 @@ export default class Index extends Vue {
 
 <style lang="scss" scoped>
 .whole {
-  &__conotainer {
+  &__container {
     position: relative;
-    width: 100vw;
+    // width: 100vw;
+    height: 100vh;
   }
 }
 .background {
@@ -51,31 +65,47 @@ export default class Index extends Vue {
     left: 0;
     display: block;
     width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    object-position: 0 9%;
   }
 }
 .content {
   &__container {
     color: white;
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     padding: 0 8%;
   }
-  &__pagetitle {
+
+  &__pagetop {
     color: #fcedcf;
     font-family: adobe-garamond-pro;
-    font-size: 5vw;
-    // margin-right: 8%;
-    margin-top: 30%;
     text-align: right;
+
+    &--title {
+      font-size: 5vw;
+      margin-top: 10%;
+    }
+
+    &--subtitle {
+      font-size: 1.5vw;
+    }
   }
   &__toc {
-    margin-top: 3%;
+    margin-top: 20%;
   }
   &__profile {
     margin: 10% 0 0 33%;
+  }
+  &__works {
+    margin: 10% 0 0 0;
   }
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
-  <section-with-dark-background title="Profile — Hiroki Kobayashi" class="profile__container">
-    <h2 class="profile__subtitle">
+  <section-with-dark-background title="Welcome" class="profile__container">
+    <!-- <h2 class="profile__subtitle">
       Introduction
     </h2>
     <div class="profile__detail">
@@ -9,10 +9,9 @@
       </p>
       <p>
         大学時代は学園祭委員として、パンフレットやグッズ・ウェブサイトなどのデザインやディレクションに携わってきました。また、来場者対応系の部署の経験もあり、案内サインを中心とした空間設計にも関心があります。<br>
-        委員会での経験は、核となるコンセプトをいかにしてグラフィックデザインの指針に翻訳するか、という試行錯誤の繰り返しでした。初心者の委員も多い環境でしたが、デザインのフィードバックの方法や、DTPソフトウェアの使い方を教えることについて思索を深めることができたのは、期せずしてそういった環境のおかげだったようにも思います。
       </p>
       <p>
-        ひとりのデザイナーとしては、文字組版が第一印象に与える影響や、情報伝達における非言語要素の役割などを大切にしています。書体を眺めることが好きで、特に和欧混植の組み合わせをあれやこれやと考える時間が幸せです。
+        ひとりのデザイナーとしては、文字組版が第一印象に与える影響や、情報伝達における非言語要素の役割などを大切にしています。
       </p>
       <p>
         「わくわくさせるクリエイティブ」を合言葉に、手に取ってくださるあなたのためのデザインをお届けします。
@@ -25,7 +24,7 @@
     <div class="profile__detail">
       <p>
         <span class="profile__detail--skillKind">DTP</span>
-        <span>Adobe InDesign / Adobe Illustroator / Adobe Photoshop / Extendscript</span>
+        <span>Adobe InDesign / Adobe Illustrator / Adobe Photoshop / Extendscript</span>
       </p>
       <p>
         <span class="profile__detail--skillKind">Web Design</span>
@@ -39,7 +38,7 @@
         <span class="profile__detail--skillKind">Others</span>
         <span>Google Apps Script (Typescript Supported)</span>
       </p>
-    </div>
+    </div> -->
   </section-with-dark-background>
 </template>
 
@@ -60,12 +59,12 @@ export default class TopProfile extends Vue {}
   &__subtitle {
     font-family: adobe-garamond-pro;
     font-weight: normal;
-    font-size: 2.5vw;
+    font-size: 25px;
     margin: 4% 0 0 0 ;
   }
   &__detail {
     margin: 2% 0;
-    line-height: 2rem;
+    line-height: 2em;
 
     &> p {
       margin: 0 0 3% 0;

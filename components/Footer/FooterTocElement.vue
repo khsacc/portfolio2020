@@ -11,7 +11,7 @@
 import { Component, Prop, Vue } from 'vue-property-decorator'
 
 @Component
-export default class TopTocElement extends Vue {
+export default class FooterTocElement extends Vue {
   @Prop({ type: String, required: true }) public readonly content!: string
 }
 </script>
@@ -19,11 +19,12 @@ export default class TopTocElement extends Vue {
 <style lang="scss" scoped>
 .toc {
   &__content {
-    text-align: right;
+    text-align: left;
+    margin: 15px 0;
 
     &--text {
       position: relative;
-      font-size: 4vw;
+      font-size: 20px;
       font-family: adobe-garamond-pro;
       transition-duration: 0.5s;
       text-decoration: none;
@@ -36,10 +37,10 @@ export default class TopTocElement extends Vue {
         &--before {
           display: inline-block;
           position: absolute;
-          top: 50%;
-          left: -7vw;
+          bottom: -10%;
+          left: 0;
           width: 0;
-          height: 0.25vw;
+          height: 1.25px;
           background: white;
           font-size: 4vw;
           transition-duration: 0.5s;
@@ -48,7 +49,7 @@ export default class TopTocElement extends Vue {
 
         &:hover .toc__content--text--before {
           background: #f7dba4;
-          width: 5vw;
+          width: 100%;
           opacity: 1;
         }
       }

@@ -8,7 +8,7 @@ const nuxtConfig:Configuration = {
   */
   target: 'server',
   head: {
-    title: 'Nightie Night | Hiroki Kobayashi Design Portfolio',
+    title: 'Hiroki Kobayashi | Nightie Night',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },

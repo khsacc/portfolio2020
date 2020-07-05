@@ -1,8 +1,22 @@
 <template>
   <div>
     <Nuxt />
+    <Footer />
   </div>
 </template>
+
+<script lang="ts">
+import Vue from 'vue'
+import {
+  Footer
+} from '@/components'
+
+export default Vue.extend({
+  components: {
+    Footer
+  }
+})
+</script>
 
 <style lang="scss">
 html {

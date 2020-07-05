@@ -25,7 +25,13 @@ export default class SectionWithDarkBackground extends Vue {
   &__title {
     font-family: adobe-garamond-pro;
     font-weight: normal;
-    font-size: 3.5vw;
+    font-size: 40px;
+
+    &:first-letter {
+      font-size: 1.75em;
+      color: #f7dba4;
+      margin-right: -0.75%;
+    }
   }
 }
 </style>
