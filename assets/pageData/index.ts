@@ -17,14 +17,14 @@ export const pageData: pageDatum[] = [
   {
     path: '/Profile',
     name: 'Profile',
-    objectPosition: 50,
+    objectPosition: 65,
     shownTop: true,
     shownFooter: true
   },
   {
     path: '/Works',
     name: 'Works',
-    objectPosition: 65,
+    objectPosition: 45,
     shownTop: true,
     shownFooter: true
   },
