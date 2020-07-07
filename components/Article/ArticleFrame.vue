@@ -30,12 +30,15 @@ export default class ArticleFrame extends Vue {
   }
 
   &__title {
+  font-weight: normal;
+
     &--container {
       margin-bottom: 5%;
       text-align: right;
       font-family: adobe-garamond-pro;
+      // font-weight: 400;
+      font-style: normal;
       font-size: 50px;
-      font-weight: normal;
 
       @include responsive(tablet) {
         font-size: 35px;
@@ -50,7 +53,7 @@ export default class ArticleFrame extends Vue {
 
   &__subtitle {
     text-align: right;
-    font-family: adobe-garamond-pro;
+    font-family: adobe-garamond-pro, ten-mincho-text;
     font-size: 75%;
     font-weight: normal;
   }
