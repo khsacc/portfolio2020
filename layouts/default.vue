@@ -1,6 +1,10 @@
 <template>
   <div>
-    <img class="nuxtpage__background" :src="require('@/assets/img/TopPage/TopBackground.png')">
+    <img
+      class="nuxtpage__background"
+      :src="require('@/assets/img/TopPage/TopBackground.png')"
+      :style="{objectPosition: `0 ${backgroundObjectPosition}%`}"
+    >
     <Nuxt class="nuxtpage__eachpage" />
     <Footer />
   </div>
@@ -17,7 +21,22 @@ import {
     Footer
   }
 })
-export default class Default extends Vue {}
+export default class Default extends Vue {
+  public get backgroundObjectPosition () {
+    const pages = [
+      {
+        path: '/',
+        objectPosition: 8
+      },
+      {
+        path: '/Profile',
+        objectPosition: 30
+      }
+    ]
+    const currentPage = pages.find(page => page.path === this.$route.path)
+    return currentPage ? currentPage.objectPosition : 8
+  }
+}
 </script>
 
 <style lang="scss">
@@ -43,7 +62,8 @@ html {
     width: 100%;
     height: 100vh;
     object-fit: cover;
-    object-position: 0 8%;
+    transition: object-position 1.5s cubic-bezier(.59,.07,.17,.99);
+    // object-position: 0 8%;
 
     @include z-index(nuxtpage__background)
   }
