@@ -1,23 +1,30 @@
 <template>
-  <div class="toc__content">
-    <nuxt-link class="toc__content--text" :to="`/${content}`">
-      <span class="toc__content--text--before" />
-      {{ content }}
-    </nuxt-link>
+  <div class="toc__wrapper">
+    <div v-for="page in pages" :key="page.name" class="toc__content">
+      <nuxt-link class="toc__content--text" :to="page.path">
+        <span class="toc__content--text--before" />
+        {{ page.name }}
+      </nuxt-link>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator'
+import { Component, Vue } from 'vue-property-decorator'
+import { pageData } from '@/assets/pageData'
 
 @Component
-export default class TopTocElement extends Vue {
-  @Prop({ type: String, required: true }) public readonly content!: string
+export default class TopToc extends Vue {
+  public pages = pageData.filter(page => page.shownTop)
 }
 </script>
 
 <style lang="scss" scoped>
 .toc {
+  &__wrapper {
+    width: 100%
+  }
+
   &__content {
     text-align: right;
 

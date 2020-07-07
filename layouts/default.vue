@@ -12,6 +12,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import { pageData } from '@/assets/pageData'
 import {
   Footer
 } from '@/components'
@@ -25,17 +26,7 @@ export default Vue.extend({
   }),
   computed: {
     backgroundObjectPosition () {
-      const pages = [
-        {
-          path: '/',
-          objectPosition: 8
-        },
-        {
-          path: '/Profile',
-          objectPosition: 30
-        }
-      ]
-      const currentPage = pages.find(page => page.path === this.$route.path)
+      const currentPage = pageData.find(page => page.path === this.$route.path)
       return currentPage ? currentPage.objectPosition : 8
     }
   },

@@ -11,9 +11,7 @@
             Design Portfolio Website
           </div>
         </section>
-        <section class="content__toc">
-          <top-toc-element v-for="content in topContents" :key="content.name" :content="content.name" />
-        </section>
+        <top-toc class="content__toc" />
       </div>
     </div>
   </div>
@@ -22,25 +20,19 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 import {
-  TopTocElement,
+  TopToc,
   TopProfile,
   TopWorks
 } from '@/components'
 
 @Component({
   components: {
-    TopTocElement,
+    TopToc,
     TopProfile,
     TopWorks
   }
 })
-export default class Index extends Vue {
-  public topContents = [
-    { name: 'Profile' },
-    { name: 'Works' },
-    { name: 'Contact' }
-  ]
-}
+export default class Index extends Vue {}
 </script>
 
 <style lang="scss" scoped>
