@@ -21,13 +21,13 @@ export const pageData: pageDatum[] = [
   {
     path: '/Works',
     name: 'Works',
-    objectPosition: 60,
+    objectPosition: 65,
     shownTop: true
   },
   {
     path: '/Contact',
     name: 'Contact',
-    objectPosition: 80,
+    objectPosition: 100,
     shownTop: true
   }
 ]
