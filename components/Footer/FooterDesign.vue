@@ -24,7 +24,7 @@ import FooterTocElement from '@/components/Footer/FooterTocElement.vue'
     FooterTocElement
   }
 })
-export default class Footer extends Vue {}
+export default class FooterDesign extends Vue {}
 </script>
 
 <style lang="scss" scoped>

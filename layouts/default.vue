@@ -1,12 +1,13 @@
 <template>
   <div>
+    <header-design />
     <img
       class="nuxtpage__background"
       :src="require('@/assets/img/TopPage/TopBackground.png')"
       :style="{objectPosition: `0 ${backgroundObjectPosition}%`}"
     >
     <Nuxt class="nuxtpage__eachpage disappear-on-page-transition" :style="{opacity: displayContent ? '1' : '0'}" />
-    <Footer class="disappear-on-page-transition" :style="{opacity: displayContent ? '1' : '0'}" />
+    <footer-design class="disappear-on-page-transition" :style="{opacity: displayContent ? '1' : '0'}" />
   </div>
 </template>
 
@@ -14,12 +15,14 @@
 import Vue from 'vue'
 import { pageData } from '@/assets/pageData'
 import {
-  Footer
+  HeaderDesign,
+  FooterDesign
 } from '@/components'
 
 export default Vue.extend({
   components: {
-    Footer
+    HeaderDesign,
+    FooterDesign
   },
   data: () => ({
     displayContent: true
