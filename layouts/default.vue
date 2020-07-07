@@ -80,7 +80,7 @@ html {
     width: 100%;
     height: 100vh;
     object-fit: cover;
-    transition: object-position 1.5s cubic-bezier(.59,.07,.17,.99);
+    transition: object-position 1.5s cubic-bezier(.84,0,.28,1.01);
     // object-position: 0 8%;
 
     @include z-index(nuxtpage__background)
