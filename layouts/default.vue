@@ -5,38 +5,47 @@
       :src="require('@/assets/img/TopPage/TopBackground.png')"
       :style="{objectPosition: `0 ${backgroundObjectPosition}%`}"
     >
-    <Nuxt class="nuxtpage__eachpage" />
-    <Footer />
+    <Nuxt class="nuxtpage__eachpage disappear-on-page-transition" :style="{opacity: displayContent ? '1' : '0'}" />
+    <Footer class="disappear-on-page-transition" :style="{opacity: displayContent ? '1' : '0'}" />
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator'
+import Vue from 'vue'
 import {
   Footer
 } from '@/components'
 
-@Component({
+export default Vue.extend({
   components: {
     Footer
+  },
+  data: () => ({
+    displayContent: true
+  }),
+  computed: {
+    backgroundObjectPosition () {
+      const pages = [
+        {
+          path: '/',
+          objectPosition: 8
+        },
+        {
+          path: '/Profile',
+          objectPosition: 30
+        }
+      ]
+      const currentPage = pages.find(page => page.path === this.$route.path)
+      return currentPage ? currentPage.objectPosition : 8
+    }
+  },
+  watch: {
+    $route () {
+      this.displayContent = false
+      setTimeout(() => { this.displayContent = true }, 1500)
+    }
   }
 })
-export default class Default extends Vue {
-  public get backgroundObjectPosition () {
-    const pages = [
-      {
-        path: '/',
-        objectPosition: 8
-      },
-      {
-        path: '/Profile',
-        objectPosition: 30
-      }
-    ]
-    const currentPage = pages.find(page => page.path === this.$route.path)
-    return currentPage ? currentPage.objectPosition : 8
-  }
-}
 </script>
 
 <style lang="scss">
@@ -51,6 +60,10 @@ html {
 *::after {
   box-sizing: border-box;
   margin: 0;
+}
+
+.disappear-on-page-transition {
+  transition: opacity 0.5s
 }
 
 .nuxtpage {
