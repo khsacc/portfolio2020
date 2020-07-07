@@ -15,16 +15,16 @@ export const pageData: pageDatum[] = [
     shownFooter: true
   },
   {
-    path: '/Profile',
-    name: 'Profile',
-    objectPosition: 65,
+    path: '/Works',
+    name: 'Works',
+    objectPosition: 45,
     shownTop: true,
     shownFooter: true
   },
   {
-    path: '/Works',
-    name: 'Works',
-    objectPosition: 45,
+    path: '/Profile',
+    name: 'Profile',
+    objectPosition: 65,
     shownTop: true,
     shownFooter: true
   },
