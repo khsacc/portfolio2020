@@ -1,8 +1,8 @@
 <template>
   <div class="whole__container">
     <div class="content__container">
-      <div>
-        <section class="content__pagetop">
+      <div class="content__subcontainer">
+        <div class="content__pagetop">
           <div class="content__pagetop--title">
             Hiroki Kobayashi
           </div>
@@ -10,7 +10,7 @@
             DTP designer<br>
             Design Portfolio Website
           </div>
-        </section>
+        </div>
         <top-toc class="content__toc" />
       </div>
     </div>
@@ -35,7 +35,6 @@ export default class Index extends Vue {}
 .whole {
   &__container {
     position: relative;
-    // width: 100vw;
     height: 100vh;
   }
 }
@@ -62,22 +61,38 @@ export default class Index extends Vue {}
     padding: 0 8%;
   }
 
+  &__subcontainer {
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
   &__pagetop {
     color: #fcedcf;
     font-family: adobe-garamond-pro;
     text-align: right;
+    font-size: 5vw;
+
+    @include responsive(tablet) {
+      font-size: 55px;
+    }
 
     &--title {
-      font-size: 5vw;
+      // font-size: 5vw;
       margin-top: 10%;
+
+      @include responsive(smartphone) {
+        margin-bottom: 10%;
+      }
     }
 
     &--subtitle {
-      font-size: 2vw;
+      font-size: 40%;
     }
   }
   &__toc {
-    margin-top: 15vh;
+    // margin-top: 15vh;
   }
 }
 </style>

@@ -29,13 +29,19 @@ export default class TopToc extends Vue {
     text-align: right;
 
     &--text {
+      display: block;
       position: relative;
-      font-size: 4vw;
+      font-size: 50px;
       font-family: adobe-garamond-pro;
       transition-duration: 0.5s;
       text-decoration: none;
       color: white;
       cursor: pointer;
+
+      @include responsive(smartphone) {
+        font-size: 35px;
+        margin: 5% 0;
+      }
 
         &:hover {
           color: #f7dba4;
