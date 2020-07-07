@@ -29,7 +29,6 @@ export default class TopToc extends Vue {
     text-align: right;
 
     &--text {
-      display: block;
       position: relative;
       font-size: 50px;
       font-family: adobe-garamond-pro;
@@ -38,9 +37,9 @@ export default class TopToc extends Vue {
       color: white;
       cursor: pointer;
 
-      @include responsive(smartphone) {
+      @include responsive(tablet) {
         font-size: 35px;
-        margin: 5% 0;
+        margin: 3% 0;
       }
 
         &:hover {

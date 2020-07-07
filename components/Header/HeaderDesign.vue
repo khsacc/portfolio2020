@@ -24,19 +24,29 @@ export default class HeaderDesign extends Vue {
   &__link {
     text-decoration: none;
     color: #f0c388;
-    width: 250px;
+    min-width: 150px;
   }
 
   &__container {
-    padding: 8% 0 4%;
+    padding: 2vw;
     background: rgb(15, 12, 22);
     font-family: adobe-garamond-pro;
     text-align: center;
     align-content: flex-end;
+    font-size: 1.5vw;
+
+    @include responsive(smartphone) {
+      padding: 3vw;
+      font-size: 10px;
+    }
   }
 
+  // &__text {
+  //   margin: 8% 4% 4%
+  // }
+
   &__name {
-    font-size: 30px;
+    font-size: 200%;
   }
 }
 </style>
