@@ -3,31 +3,36 @@ export type pageDatum = {
   name: string,
   objectPosition: number,
   shownTop: boolean
+  shownFooter: boolean
 }
 
 export const pageData: pageDatum[] = [
   {
     path: '/',
-    name: 'Top',
+    name: 'Top Page',
     objectPosition: 8,
-    shownTop: false
+    shownTop: false,
+    shownFooter: true
   },
   {
     path: '/Profile',
     name: 'Profile',
     objectPosition: 50,
-    shownTop: true
+    shownTop: true,
+    shownFooter: true
   },
   {
     path: '/Works',
     name: 'Works',
     objectPosition: 65,
-    shownTop: true
+    shownTop: true,
+    shownFooter: true
   },
   {
     path: '/Contact',
     name: 'Contact',
     objectPosition: 100,
-    shownTop: true
+    shownTop: true,
+    shownFooter: true
   }
 ]
