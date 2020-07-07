@@ -1,7 +1,13 @@
 <template>
-  <header class="header__container">
-    aa
-  </header>
+  <nuxt-link class="header__link" to="/">
+    <header class="header__container">
+      <span class="header__name">
+        Hiroki Kobayashi
+      </span>
+      <br>
+      <span>Design Portfolio Website</span>
+    </header>
+  </nuxt-link>
 </template>
 
 <script lang="ts">
@@ -15,8 +21,22 @@ export default class HeaderDesign extends Vue {
 
 <style lang="scss" scoped>
 .header {
+  &__link {
+    text-decoration: none;
+    color: #f0c388;
+    width: 250px;
+  }
+
   &__container {
-    background: #100316;
+    padding: 8% 0 4%;
+    background: rgba(15, 12, 22, 0.438);
+    font-family: adobe-garamond-pro;
+    text-align: center;
+    align-content: flex-end;
+  }
+
+  &__name {
+    font-size: 30px;
   }
 }
 </style>
