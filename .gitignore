@@ -94,3 +94,6 @@ sw.*
 
 # my memo files
 memo/
+
+# Adobe Illustrator file
+*.ai
