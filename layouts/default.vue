@@ -61,6 +61,10 @@ html {
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
 .disappear-on-page-transition {
   transition: opacity 0.5s
 }

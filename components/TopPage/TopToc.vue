@@ -33,7 +33,6 @@ export default class TopToc extends Vue {
       font-size: 50px;
       font-family: adobe-garamond-pro;
       transition-duration: 0.5s;
-      text-decoration: none;
       color: white;
       cursor: pointer;
 

@@ -22,7 +22,6 @@ export default class HeaderDesign extends Vue {
 <style lang="scss" scoped>
 .header {
   &__link {
-    text-decoration: none;
     color: #f0c388;
     min-width: 150px;
   }
