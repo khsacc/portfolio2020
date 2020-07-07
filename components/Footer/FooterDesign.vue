@@ -28,7 +28,7 @@ import { pageData } from '@/assets/pageData'
 
 @Component
 export default class FooterDesign extends Vue {
-   public pages = pageData.filter(page => page.shownFooter)
+  public pages = pageData.filter(page => page.shownFooter)
 }
 </script>
 
