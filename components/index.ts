@@ -5,10 +5,12 @@ import FooterDesign from './Footer/FooterDesign.vue'
 import TopToc from './TopPage/TopToc.vue'
 // used in the article pages
 import ArticleFrame from './Article/ArticleFrame.vue'
+import ArticleSectionBack from './Article/ArticleSectionBack.vue'
 
 export {
   HeaderDesign,
   FooterDesign,
   TopToc,
-  ArticleFrame
+  ArticleFrame,
+  ArticleSectionBack
 }
