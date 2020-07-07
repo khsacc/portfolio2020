@@ -29,7 +29,7 @@ export default class HeaderDesign extends Vue {
 
   &__container {
     padding: 8% 0 4%;
-    background: rgba(15, 12, 22, 0.438);
+    background: rgb(15, 12, 22);
     font-family: adobe-garamond-pro;
     text-align: center;
     align-content: flex-end;
