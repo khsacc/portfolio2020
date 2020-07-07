@@ -12,10 +12,12 @@ const nuxtConfig:Configuration = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      // Adobe Fonts Setting
-      { rel: 'stylesheet', href: 'https://use.typekit.net/tpq4hel.css' },
       // Google Fonts (Noto Sans Jp) Setting
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap' }
+    ],
+    script: [
+      // Adobe Fonts Setting
+      { src: '/adobeFont.js' }
     ]
   },
   css: [
