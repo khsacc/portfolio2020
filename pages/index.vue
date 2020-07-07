@@ -20,16 +20,12 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 import {
-  TopToc,
-  TopProfile,
-  TopWorks
+  TopToc
 } from '@/components'
 
 @Component({
   components: {
-    TopToc,
-    TopProfile,
-    TopWorks
+    TopToc
   }
 })
 export default class Index extends Vue {}
@@ -81,13 +77,7 @@ export default class Index extends Vue {}
     }
   }
   &__toc {
-    margin-top: 20%;
-  }
-  &__profile {
-    margin: 10% 0 0 33%;
-  }
-  &__works {
-    margin: 10% 0 0 0;
+    margin-top: 15vh;
   }
 }
 </style>
