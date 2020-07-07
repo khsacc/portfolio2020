@@ -1,0 +1,11 @@
+$mq-breakpoints: (
+  smartphone: 285px,
+  tablet: 768px,
+);
+
+
+@mixin mq($breakpoint) {
+  @media screen and (max-width) {
+    @content;
+  }
+}
