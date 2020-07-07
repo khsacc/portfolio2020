@@ -50,7 +50,7 @@ export default Vue.extend({
 <style lang="scss">
 html {
   font-family: 'calluna-sans', 'Noto Sans JP', sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 300;
 }
 
