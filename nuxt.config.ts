@@ -4,11 +4,11 @@ const nuxtConfig:Configuration = {
   mode: 'universal',
   target: 'server',
   head: {
-    title: 'Hiroki Kobayashi | Nightie Night',
+    title: 'Hiroki Kobayashi Design Portfolio',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
+      { hid: 'description', name: 'description', content: "Hiroki Kobayashi's Design Portfolio Website" }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
