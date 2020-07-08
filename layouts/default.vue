@@ -74,7 +74,7 @@ a {
   text-decoration: none;
 }
 
-a.external-link {
+a[target=_blank] {
   text-decoration: underline;
   color: #a4d8ee;
 }
