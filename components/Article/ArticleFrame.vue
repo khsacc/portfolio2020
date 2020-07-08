@@ -36,13 +36,17 @@ export default class ArticleFrame extends Vue {
   &__title {
   font-weight: normal;
 
+  @include responsive(smartphone) {
+    font-size: 42px;
+  }
+
     &--container {
       margin-bottom: 5%;
       text-align: right;
       font-family: adobe-garamond-pro, ten-mincho-text;
       // font-weight: 400;
       font-style: normal;
-      font-size: 50px;
+      font-size: 47.5px;
 
       @include responsive(tablet) {
         font-size: 35px;
