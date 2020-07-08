@@ -27,14 +27,14 @@ export default class HeaderDesign extends Vue {
   }
 
   &__container {
-    padding: 2vw;
+    padding: 15px;
     background: rgb(15, 12, 22);
     font-family: adobe-garamond-pro;
     text-align: center;
     align-content: flex-end;
-    font-size: 1.5vw;
+    font-size: 15px;
 
-    @include responsive(smartphone) {
+    @include responsive(tablet) {
       padding: 3vw;
       font-size: 10px;
     }
