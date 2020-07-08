@@ -50,8 +50,12 @@ export default Vue.extend({
 <style lang="scss">
 html {
   font-family: 'calluna-sans', 'Noto Sans JP', sans-serif;
-  font-size: 16px;
+  font-size: 13.5px;
   font-weight: 300;
+
+  @include responsive(tablet) {
+    font-size: 14px;
+  }
 }
 
 *,
@@ -59,6 +63,11 @@ html {
 *::after {
   box-sizing: border-box;
   margin: 0;
+}
+
+p {
+  margin: 0.5em 0;
+  line-height: 2.1em;
 }
 
 a {

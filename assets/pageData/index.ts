@@ -22,6 +22,14 @@ export const pageData: pageDatum[] = [
     shownFooter: true
   },
   {
+    path: '/Works/KomabaFes2019',
+    name: '第70回駒場祭',
+    objectPosition: 20,
+    shownTop: false,
+    shownFooter: false
+  },
+
+  {
     path: '/Profile',
     name: 'Profile',
     objectPosition: 65,
