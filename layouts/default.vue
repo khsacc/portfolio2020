@@ -74,6 +74,11 @@ a {
   text-decoration: none;
 }
 
+a.external-link {
+  text-decoration: underline;
+  color: #a4d8ee;
+}
+
 .disappear-on-page-transition {
   transition: opacity 0.5s
 }
