@@ -7,6 +7,9 @@
       <h2 v-if="pageSubTitle" class="article__frame__subtitle">
         {{ pageSubTitle }}
       </h2>
+      <div v-if="pageDescription" class="article__frame__description">
+        {{ pageDescription }}
+      </div>
     </div>
     <slot />
   </article>
@@ -19,13 +22,14 @@ import { Component, Prop, Vue } from 'vue-property-decorator'
 export default class ArticleFrame extends Vue {
   @Prop({ type: String, required: true }) public pageTitle!: string
   @Prop({ type: String, required: false }) public pageSubTitle ?: string
+  @Prop({ type: String, required: false }) public pageDescription ?: string
 }
 </script>
 
 <style lang="scss" scoped>
 .article__frame {
   &__container {
-    padding: 15% 8% 0;
+    padding: 15% 8% 10%;
     color: white;
   }
 
@@ -35,7 +39,7 @@ export default class ArticleFrame extends Vue {
     &--container {
       margin-bottom: 5%;
       text-align: right;
-      font-family: adobe-garamond-pro;
+      font-family: adobe-garamond-pro, ten-mincho-text;
       // font-weight: 400;
       font-style: normal;
       font-size: 50px;
@@ -56,6 +60,10 @@ export default class ArticleFrame extends Vue {
     font-family: adobe-garamond-pro, ten-mincho-text;
     font-size: 75%;
     font-weight: normal;
+  }
+
+  &__description {
+    font-size: 16px;
   }
 }
 </style>
