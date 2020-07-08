@@ -87,6 +87,10 @@ a[target=_blank] {
   position: fixed;
   right: 8%;
   transition: all 1.3s cubic-bezier(.78,-0.34,.21,1.36);
+
+  @include responsive(smartphone) {
+    left: 8%;
+  }
 }
 
 .nuxtpage {

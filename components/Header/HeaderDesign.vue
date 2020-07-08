@@ -10,7 +10,12 @@
       </div>
     </nuxt-link>
     <div class="headernav__container ">
-      <nuxt-link v-for="page in pages" :key="page.name" :class="`headernav__link ${$route.path === page.path ? 'headernav__link--current' : ''}`" :to="page.path">
+      <nuxt-link
+        v-for="page in pages"
+        :key="page.name"
+        :class="`headernav__link ${$route.path === page.path ? 'headernav__link--current' : ''} ${page.path === '/Contact' ? 'headernav__link--hiddensp' : ''}`"
+        :to="page.path"
+      >
         {{ page.name }}
         <span :class="`headernav__underline ${$route.path === page.path ? 'headernav__underline--current' : ''}`" />
       </nuxt-link>
@@ -36,6 +41,7 @@ export default class HeaderDesign extends Vue {
   padding-right: 10px;
 
   @include responsive(smartphone) {
+    justify-content: center;
       padding-right: 0;
     }
 }
@@ -43,10 +49,6 @@ export default class HeaderDesign extends Vue {
 .headernav {
   &__container {
     color: white;
-
-    @include responsive(smartphone) {
-      display: none;
-    }
   }
 
   &__underline {
@@ -71,6 +73,12 @@ export default class HeaderDesign extends Vue {
 
     @include responsive(tablet) {
       margin: 0 5px;
+    }
+
+    &--hiddensp {
+      @include responsive(smartphone) {
+        display: none;
+      }
     }
 
     &:hover,
