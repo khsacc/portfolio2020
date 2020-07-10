@@ -49,6 +49,7 @@ export default class HeaderDesign extends Vue {
 .headernav {
   &__container {
     color: white;
+    line-height: 30px;
   }
 
   &__underline {
