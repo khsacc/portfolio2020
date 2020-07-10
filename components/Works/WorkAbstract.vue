@@ -1,10 +1,10 @@
 <template>
   <nuxt-link :to="workData.to" class="workabstract__container">
     <div>
-      <img class="workabstract__image" :src="workData.image">
+      <img class="workabstract__image" :src="workData.abstractImage">
     </div>
     <div class="workabstract__title">
-      {{ workData.title }}
+      {{ workData.abstractTitle }}
     </div>
     <div class="workabstract__info">
       {{ workData.info }}

@@ -1,8 +1,6 @@
 <template>
   <article-frame
-    page-title="第70回駒場祭"
-    page-sub-title="「七変華」"
-    page-description="2019年・共同制作（広報局長）"
+    :work-page-path="$route.path"
   >
     <div>
       <p>

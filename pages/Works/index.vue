@@ -4,13 +4,14 @@
     page-description="カードをクリックして詳細をご覧ください"
   >
     <div class="abstract__container">
-      <work-abstract v-for="work in worksData" :key="work.title" :work-data="work" />
+      <work-abstract v-for="work in worksData" :key="work.abstractTitle" :work-data="work" />
     </div>
   </article-frame>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
+import { workData } from '@/assets/workData'
 import {
   ArticleFrame,
   WorkAbstract
@@ -23,15 +24,7 @@ import {
   }
 })
 export default class Works extends Vue {
-  public worksData = [
-    {
-      to: '/Works/KomabaFes2019',
-      title: '第70回駒場祭「七変華」',
-      info: '2019年・共同制作',
-      category: ['Design Direction', 'DTP', 'Illustration', 'Web', 'Logo', 'Copy Writing'],
-      image: require('@/assets/img/works/KF70/abstract.jpg')
-    }
-  ]
+  public worksData = workData
 }
 </script>
 
