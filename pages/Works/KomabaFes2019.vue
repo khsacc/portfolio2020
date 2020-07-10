@@ -1,6 +1,7 @@
 <template>
   <article-frame
     :work-page-path="$route.path"
+    :dark-back="true"
   >
     <div>
       <p>
@@ -49,12 +50,16 @@ export default class KomabaFes2019 extends Vue {
       path: require('@/assets/img/works/KF70/poster.jpg')
     },
     {
-      name: '正門前立看板（900mm*1,800mm）',
+      name: '正門前立看板（900 mm * 1,800 mm）',
       path: require('@/assets/img/works/KF70/board.jpg')
     },
     {
       name: '公式パンフレット・「ご来場の皆さまへ」ページ',
       path: require('@/assets/img/works/KF70/pam_info.jpg')
+    },
+    {
+      name: '建物案内看板（1,800 mm * 1,800 mm）',
+      path: require('@/assets/img/works/KF70/3D_info.jpg')
     }
   ]
 }
