@@ -9,7 +9,7 @@
     <div class="workabstract__info">
       {{ workData.info }}
     </div>
-    <div>
+    <div class="workabstract__categories">
       <work-category v-for="category in workData.category" :key="category" :category="category" />
     </div>
   </nuxt-link>
@@ -44,7 +44,7 @@ $contentWidth_smartphone: 280px;
     display: block;
     transition: all 0.35s ease-in-out;
     color: white;
-    width: fit-content;
+    width: $contentWidth + 2 * $contentMargin;
 
     &:hover {
       background: rgba(253, 253, 253, 0.04);
@@ -68,6 +68,10 @@ $contentWidth_smartphone: 280px;
   &__info {
     font-size: 14px;
     margin: 0 0 10px 0;
+  }
+
+  &__categories {
+    width: 100%;
   }
 }
 </style>
