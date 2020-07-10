@@ -1,7 +1,7 @@
 <template>
   <span
-    class="work__category__element"
-    :style="`margin-${rightAlign ? 'left' : 'right'}: 2%; ${darkBack ? 'background' : 'color'}: #f0d3ae; ${darkBack ? 'color' : 'background'}: #201531;`"
+    :class="`work__category__element ${darkBack ? 'work__category__element--darkBack' : ''}`"
+    :style="`margin-${rightAlign ? 'left' : 'right'}: 2%;`"
   >
     {{ category }}
   </span>
@@ -24,5 +24,11 @@ export default class WorkCategory extends Vue {
     padding: 1.25% 3% 1%;
     margin: 0 0 1% 0;
     color: #f0d3ae;
+    background: #201531;
+
+    &--darkBack {
+      background: rgba(0,0,0,0);
+      border: 1px solid #f0d3ae;
+    }
   }
 </style>

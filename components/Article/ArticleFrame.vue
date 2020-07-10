@@ -11,23 +11,46 @@
         {{ displayData.displayDescription }}
       </div>
     </div>
-    <slot />
+    <div>
+      <div v-if="displayCategory" class="article__frame__categories">
+        <work-category
+          v-for="category in displayCategory"
+          :key="category"
+          :category="category"
+          :right-align="true"
+          :dark-back="darkBack"
+        />
+      </div>
+    </div>
+    <div class="article__frame__slot">
+      <slot />
+    </div>
   </article>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator'
 import { workData } from '@/assets/workData'
+import WorkCategory from '@/components/Works/WorkCategory.vue'
 
-@Component
+@Component({
+  components: {
+    WorkCategory
+  }
+})
 export default class ArticleFrame extends Vue {
   @Prop({ type: String, required: false }) public pageTitle?: string
   @Prop({ type: String, required: false }) public pageSubTitle ?: string
   @Prop({ type: String, required: false }) public pageDescription ?: string
   @Prop({ type: String, required: false }) public workPagePath ?: string
+  @Prop({ type: Boolean, required: false, default: () => false }) public darkBack ?: string
 
   public get currentWork () {
     return workData.find(work => work.to === this.workPagePath)
+  }
+
+  public get displayCategory () {
+    if (this.currentWork) { return this.currentWork.category }
   }
 
   public get displayData () {
@@ -65,7 +88,6 @@ export default class ArticleFrame extends Vue {
   }
 
     &--container {
-      margin-bottom: 5%;
       text-align: right;
       font-family: adobe-garamond-pro, ten-mincho-text;
       // font-weight: 400;
@@ -92,6 +114,18 @@ export default class ArticleFrame extends Vue {
 
   &__description {
     font-size: 16px;
+  }
+
+  &__categories {
+    text-align: right;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 5px 0 5px auto;
+    width: 75%;
+  }
+
+  &__slot {
+    margin-top: 7.5%;
   }
 }
 </style>
