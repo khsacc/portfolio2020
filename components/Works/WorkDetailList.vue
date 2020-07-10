@@ -1,7 +1,9 @@
 <template>
   <div class="workdetaillist__container">
     <div v-for="item in items" :key="item.name" class="workdetaillist__item--container">
-      <img :src="item.path" class="workdetaillist__item--image">
+      <div class="workdetaillist__item--image--container">
+        <img :src="item.path" class="workdetaillist__item--image--content">
+      </div>
       <div class="workdetaillist__item--info">
         {{ item.name }}
       </div>
@@ -46,9 +48,21 @@ export default class WorkAbstract extends Vue {
     }
 
     &--image {
-      max-width: 100%;
-      width: auto;
-      height: auto;
+
+      &--container {
+        height: 330px;
+        width: 400px;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(73, 82, 105, 0.381);
+      }
+      &--content {
+        max-width: 100%;
+        width: auto;
+        max-height: 100%;
+      }
     }
 
     &--info {
