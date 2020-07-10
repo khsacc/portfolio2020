@@ -15,7 +15,7 @@ export const workData = [
     abstractImage: require('@/assets/img/works/KF70/abstract.jpg'),
     title: '第70回駒場祭',
     subtitle: '「七変華」',
-    info: '2019年・共同制作',
-    category: ['Design Direction', 'DTP', 'Illustration', 'Web', 'Logo', 'Copy Writing']
+    info: '2019年・共同制作（広報局長）',
+    category: ['Design Direction', 'DTP', 'Illustration', 'Information Signs', 'Web', 'Logo', 'Copy Writing']
   }
 ]
