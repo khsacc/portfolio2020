@@ -7,11 +7,13 @@
             Hiroki Kobayashi
           </div>
           <div class="content__pagetop--subtitle">
-            DTP designer<br>
-            Design Portfolio Website
+            Designer<br>
           </div>
         </div>
         <top-toc class="content__toc" />
+        <div class="content__introduction">
+          「わくわくさせるクリエイティブ」が合言葉。<br>
+        </div>
       </div>
     </div>
   </div>
@@ -35,7 +37,7 @@ export default class Index extends Vue {}
 .whole {
   &__container {
     position: relative;
-    height: 100vh;
+    min-height: 100vh;
   }
 }
 .background {
@@ -57,12 +59,12 @@ export default class Index extends Vue {}
     flex-direction: column;
     justify-content: center;
     width: 100%;
-    height: 100%;
+    min-height: 100%;
     padding: 0 8%;
   }
 
   &__subcontainer {
-    height: 75vh;
+    min-height: 75vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -92,7 +94,14 @@ export default class Index extends Vue {}
     }
   }
   &__toc {
-    // margin-top: 15vh;
+    margin: 15vh 0;
+  }
+
+  &__introduction {
+    text-align: right;
+    margin-bottom: 15vh;
+    font-family: adobe-garamond-pro, ten-mincho-text;
+    font-weight: 300;
   }
 }
 </style>
