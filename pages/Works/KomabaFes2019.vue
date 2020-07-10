@@ -53,8 +53,11 @@ export default class KomabaFes2019 extends Vue {
     {
       name: '正門前立看板（900mm*1,800mm）',
       path: require('@/assets/img/works/KF70/board.jpg')
+    },
+    {
+      name: '公式パンフレット・「ご来場の皆さまへ」ページ',
+      path: require('@/assets/img/works/KF70/pam_info.jpg')
     }
   ]
 }
-
 </script>
