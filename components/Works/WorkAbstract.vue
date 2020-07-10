@@ -35,6 +35,8 @@ export default class WorkAbstract extends Vue {
 $contentMargin: 20px;
 $contentWidth: 310px;
 $contentWidth_smartphone: 280px;
+$contentMargin_smartphone: 10px;
+$contentWidth_smartphone_se: 220px;
 
 .workabstract {
   &__container {
@@ -49,12 +51,25 @@ $contentWidth_smartphone: 280px;
     &:hover {
       background: rgba(253, 253, 253, 0.04);
     }
+
+    @include responsive(smartphone) {
+      width: $contentWidth_smartphone + 2 * $contentMargin_smartphone;
+    }
+
+    @include responsive(smartphone_se) {
+      width: $contentWidth_smartphone_se + 2 * $contentMargin_smartphone;
+    }
   }
 
   &__image {
-    width: $contentWidth;
+    width: 100%;
     display: block;
     margin-bottom: $contentMargin;
+
+    @include responsive(smartphone) {
+      width: 100%;
+      margin-bottom: $contentMargin_smartphone;
+    }
   }
 
   &__title {
@@ -63,9 +78,11 @@ $contentWidth_smartphone: 280px;
     letter-spacing: 0.09em;
     font-feature-settings: "palt";
     width: $contentWidth;
+    width: 100%;
   }
 
   &__info {
+    width: 100%;
     font-size: 14px;
     margin: 0 0 10px 0;
   }

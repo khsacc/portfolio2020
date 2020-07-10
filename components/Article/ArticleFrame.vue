@@ -125,6 +125,7 @@ export default class ArticleFrame extends Vue {
   }
 
   &__slot {
+    width: 100%;
     margin-top: 7.5%;
   }
 }
