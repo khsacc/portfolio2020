@@ -35,23 +35,27 @@ export default class WorkAbstract extends Vue {
     // align-items: flex-start;
     align-items: center;
     justify-content: center;
-    // flex-direction: column;
-    flex-wrap: wrap;
+    flex-direction: column;
+    // flex-wrap: wrap;
   }
 
   $itemContainerPadding: 10%;
 
   &__item {
     &--container {
-      max-width: 500px;
+      max-width: 800px;
+      width: 80%;
       margin: 15px;
+
+      @include responsive(smartphone) {
+        width: 100%;
+      }
     }
 
     &--image {
-
       &--container {
-        height: 330px;
-        width: 450px;
+        height: 450px;
+        width: 100%;
         padding: 20px 35px;
         display: flex;
         justify-content: center;
@@ -67,7 +71,7 @@ export default class WorkAbstract extends Vue {
     }
 
     &--info {
-      text-align: right;
+      text-align: center;
       width: 100%;
     }
   }
