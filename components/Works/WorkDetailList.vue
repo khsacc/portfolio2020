@@ -35,8 +35,8 @@ export default class WorkAbstract extends Vue {
     // align-items: flex-start;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    // flex-wrap: wrap;
+    // flex-direction: column;
+    flex-wrap: wrap;
   }
 
   $itemContainerPadding: 10%;
@@ -51,12 +51,13 @@ export default class WorkAbstract extends Vue {
 
       &--container {
         height: 330px;
-        width: 400px;
-        padding: 20px;
+        width: 450px;
+        padding: 20px 35px;
         display: flex;
         justify-content: center;
         align-items: center;
         background: rgba(73, 82, 105, 0.381);
+        // background: rgba(255, 255, 255, 0.8);
       }
       &--content {
         max-width: 100%;
