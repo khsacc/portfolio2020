@@ -3,7 +3,7 @@
     :work-page-path="$route.path"
     :dark-back="true"
   >
-    <div>
+    <article-section-back :max-width="800">
       <p>
         私の統括した部署の職掌は、パンフレットやウェブサイトから、映像、グッズ、SNSなどの広報戦略、案内所の設置と案内サインシステムの構築を中心とした空間設計まで、多岐にわたります。
       </p>
@@ -16,8 +16,8 @@
       <p>
         以下では、私自身が制作した制作物をいくつかご紹介します。
       </p>
-      <work-detail-list :items="worksList" />
-    </div>
+    </article-section-back>
+    <work-detail-list :items="worksList" />
   </article-frame>
 </template>
 
@@ -25,6 +25,7 @@
 import { Component, Vue } from 'vue-property-decorator'
 import {
   ArticleFrame,
+  ArticleSectionBack,
   WorkDetailList
 } from '@/components'
 import { worksItemDatum } from '@/assets/types/works'
@@ -32,6 +33,7 @@ import { worksItemDatum } from '@/assets/types/works'
 @Component({
   components: {
     ArticleFrame,
+    ArticleSectionBack,
     WorkDetailList
   }
 })
