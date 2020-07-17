@@ -3,9 +3,16 @@
     <div v-for="item in items" :key="item.name" class="workdetaillist__item--container">
       <div class="workdetaillist__item--image--container">
         <img :src="item.path" class="workdetaillist__item--image--content">
-      </div>
-      <div class="workdetaillist__item--info">
-        {{ item.name }}
+        <div class="workdetaillist__item--info">
+          <div class="workdetaillist__item--info--name">
+            {{ item.name }}
+          </div>
+          <p>
+            <span v-for="line in item.comment.split('\n')" :key="line" class="workdetaillist__item--info--comment">
+              {{ line }}<br>
+            </span>
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -54,25 +61,30 @@ export default class WorkAbstract extends Vue {
 
     &--image {
       &--container {
-        height: 450px;
+        // height: 450px;
         width: 100%;
         padding: 20px 35px;
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
         background: rgba(73, 82, 105, 0.381);
-        // background: rgba(255, 255, 255, 0.8);
       }
       &--content {
         max-width: 100%;
         width: auto;
-        max-height: 100%;
+        max-height: 420px;
       }
     }
 
     &--info {
       text-align: center;
       width: 100%;
+      margin-top: 5px;
+
+      &--name {
+        font-weight: bold;
+      }
     }
   }
 }
