@@ -25,4 +25,4 @@ $ yarn dev
 Design layout outputs such as AdobeXD file is not provided. All designs are coding-based.
 
 ## Contact
-If you want to contact me, send an e-mail to ``hero.key629522[at]gmail.com`` (replace [at] with @)
+If you want to contact me, send an e-mail to ``k.hiroki1.732[at]gmail.com`` (replace [at] with @)

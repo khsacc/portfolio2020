@@ -3,7 +3,7 @@
     page-title="Contact"
   >
     <article-section-back>
-      ご連絡は、メール（ hero.key629522[at]gmail.com, [at]を@に置換してください ）までお願いいたします。
+      ご連絡は、メール（ k.hiroki1.732[at]gmail.com, [at]を@に置換してください ）までお願いいたします。
     </article-section-back>
   </article-frame>
 </template>
