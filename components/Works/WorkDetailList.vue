@@ -81,12 +81,12 @@ export default class WorkAbstract extends Vue {
     }
 
     &--info {
-      text-align: center;
       width: 100%;
       margin-top: 5px;
 
       &--name {
         font-weight: bold;
+        text-align: center;
       }
     }
   }
