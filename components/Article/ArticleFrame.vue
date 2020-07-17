@@ -2,19 +2,19 @@
   <article class="article__frame__container">
     <div class="article__frame__title--container">
       <h1 class="article__frame__title">
-        {{ displayData.displayTitle }}
+        {{ pageTitle }}
       </h1>
-      <h2 v-if="displayData.displaySubtitle" class="article__frame__subtitle">
-        {{ displayData.displaySubtitle }}
+      <h2 v-if="pageSubTitle" class="article__frame__subtitle">
+        {{ pageSubTitle }}
       </h2>
-      <div v-if="displayData.displayDescription" class="article__frame__description">
-        {{ displayData.displayDescription }}
+      <div v-if="pageDescription" class="article__frame__description">
+        {{ pageDescription }}
       </div>
     </div>
     <div>
-      <div v-if="displayCategory" class="article__frame__categories">
+      <div v-if="categories" class="article__frame__categories">
         <work-category
-          v-for="category in displayCategory"
+          v-for="category in categories"
           :key="category"
           :category="category"
           :right-align="true"
@@ -30,7 +30,6 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator'
-import { workData } from '@/assets/workData'
 import WorkCategory from '@/components/Works/WorkCategory.vue'
 
 @Component({
@@ -39,37 +38,11 @@ import WorkCategory from '@/components/Works/WorkCategory.vue'
   }
 })
 export default class ArticleFrame extends Vue {
-  @Prop({ type: String, required: false }) public pageTitle?: string
+  @Prop({ type: String, required: true, default: () => '' }) public pageTitle!: string
   @Prop({ type: String, required: false }) public pageSubTitle ?: string
   @Prop({ type: String, required: false }) public pageDescription ?: string
-  @Prop({ type: String, required: false }) public workPagePath ?: string
-  @Prop({ type: Boolean, required: false, default: () => false }) public darkBack ?: string
-
-  public get currentWork () {
-    return workData.find(work => work.to === this.workPagePath)
-  }
-
-  public get displayCategory () {
-    if (this.currentWork) { return this.currentWork.category }
-  }
-
-  public get displayData () {
-    if (this.workPagePath) {
-      if (this.currentWork) {
-        return {
-          displayTitle: this.currentWork.title,
-          displaySubtitle: this.currentWork.subtitle,
-          displayDescription: this.currentWork.info
-        }
-      }
-    } else {
-      return {
-        displayTitle: this.pageTitle,
-        displaySubtitle: this.pageSubTitle,
-        displayDescription: this.pageDescription
-      }
-    }
-  }
+  @Prop({ type: Array, required: false }) public categories ?: string[]
+  @Prop({ type: Boolean, required: false, default: () => false }) public darkBack!: boolean
 }
 </script>
 
