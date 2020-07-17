@@ -41,27 +41,35 @@ export default class KomabaFes2019 extends Vue {
   public worksList: worksItemDatum[] = [
     {
       name: 'テーマ発表画像',
-      path: require('@/assets/img/works/KF70/abstract.jpg')
+      path: require('@/assets/img/works/KF70/abstract.jpg'),
+      comment: 'テーマを一般に発表する際に、SNSに投稿した画像です。'
     },
     {
       name: '英語版バナー',
-      path: require('@/assets/img/works/KF70/banner.jpg')
+      path: require('@/assets/img/works/KF70/banner.jpg'),
+      comment: `大学のウェブサイトに掲載をお願いしたバナーです。英語話者の来場を見込み、英語版も用意しました。
+      欧文書体には、幾何学的なロゴと相性がよいFuturaを採用しました。「未来」の意味があるこの書体に、70周年の節目の駒場祭が、過去から未来へつながるものであるようにという思いを込めています。`
     },
     {
       name: 'ポスター（A2 paper）',
-      path: require('@/assets/img/works/KF70/poster.jpg')
+      path: require('@/assets/img/works/KF70/poster.jpg'),
+      comment: `学内に掲示したり、学校や学習塾などにお送りしたりしたA2サイズのポスターです。また、テーマ発表のときには間に合わなかった「七変華」の字形調整を行っています（テーマ発表画像と見比べてみてください……！）。「変」のはらいや「華」の縦画を生き生きとさせるように字形を調整したので、それを活かすべくテーマは縦書きで組んでいます。
+      ベースカラーを白にするか黒にするか迷いましたが、「学園祭の当日に光が入ってきて、万華鏡の模様が見える」というメッセージを表現すべく、黒を選択しています。これにより、幾何学的なロゴが引き締まって見える点も効果的だったと感じました。`
     },
     {
       name: '正門前立看板（900 mm * 1,800 mm）',
-      path: require('@/assets/img/works/KF70/board.jpg')
+      path: require('@/assets/img/works/KF70/board.jpg'),
+      comment: '当日、来場される方々が真っ先に目にする場所に置かれていた看板です。変則的な形や大きさでしたが、写真を撮られることを見越して「駒場祭の顔」となるようなデザインを目指しました。'
     },
     {
       name: '公式パンフレット・「ご来場の皆さまへ」ページ',
-      path: require('@/assets/img/works/KF70/pam_info.jpg')
+      path: require('@/assets/img/works/KF70/pam_info.jpg'),
+      comment: '公式パンフレットの制作に深くかかわることはなかった学園祭でしたが、唯一制作したのがこのページです。テーマの世界観を維持しつつ、情報がスムーズに目に入るよう、文字組と色分けの工夫を施しました。'
     },
     {
       name: '建物案内看板（1,800 mm * 1,800 mm）',
-      path: require('@/assets/img/works/KF70/3D_info.jpg')
+      path: require('@/assets/img/works/KF70/3D_info.jpg'),
+      comment: '案内の難しさが長年課題であった建物の前に新しく設置した案内看板です。通常の案内物では平面図のみを用いますが、ここではそれを立体風にアレンジし、入口の関係などをわかりやすく示しています。できるだけ看板設置場所と建物の位置関係を正確に表現し、直感的な案内を目指しています。また、目的の建物にたどり着くことができない方も多いため、キャンパスマップを配置して「周辺地図」の役割も持たせています。'
     }
   ]
 }
