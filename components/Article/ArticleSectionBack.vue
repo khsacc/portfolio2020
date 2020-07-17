@@ -1,10 +1,14 @@
 <template>
   <!-- tsx化したいがひとまず保留 -->
   <nuxt-link v-if="to" class="section__container section__container--link" :to="to">
-    <slot />
+    <div :style="inlineStyle">
+      <slot />
+    </div>
   </nuxt-link>
   <div v-else class="section__container">
-    <slot />
+    <div :style="inlineStyle">
+      <slot />
+    </div>
   </div>
 </template>
 
@@ -14,6 +18,11 @@ import { Component, Prop, Vue } from 'vue-property-decorator'
 @Component
 export default class ArticleSectionBack extends Vue {
   @Prop({ type: String, required: false }) public to?: string
+  @Prop({ type: Number, required: false }) public maxWidth?: number
+
+  public get inlineStyle () {
+    return this.maxWidth ? `max-width: ${this.maxWidth}px` : ''
+  }
 }
 </script>
 
@@ -22,6 +31,9 @@ export default class ArticleSectionBack extends Vue {
   &__container {
     display: block;
     padding: 4%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: rgba(4, 1, 26, 0.35);
     color: white;
 
