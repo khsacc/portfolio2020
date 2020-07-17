@@ -20,7 +20,6 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator'
-import { worksItemDatum } from '@/assets/types/works'
 import WorkCategory from '@/components/Works/WorkCategory.vue'
 
 @Component({
@@ -29,7 +28,11 @@ import WorkCategory from '@/components/Works/WorkCategory.vue'
   }
 })
 export default class WorkAbstract extends Vue {
-  @Prop({ type: Array, required: true }) public items!: worksItemDatum[]
+  @Prop({ type: Array, required: true }) public items!: {
+    name: string,
+    path: NodeRequire,
+    comment: string
+  }[]
 }
 </script>
 
