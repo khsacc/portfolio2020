@@ -44,6 +44,12 @@ const nuxtConfig:Configuration = {
       }
     }
   },
+  generate: {
+    // nuxt generateでは動的なパラメータを生成することができない
+    routes: [
+      '/Works/KomabaFes2019'
+    ]
+  },
   typescript: {
     typecheck: {
       eslint: true,
