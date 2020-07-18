@@ -10,7 +10,7 @@
       {{ workData.info }}
     </div>
     <div class="workabstract__categories">
-      <work-category v-for="category in workData.category" :key="category" :category="category" />
+      <work-category v-for="category in workData.categories" :key="category" :category="category" />
     </div>
   </nuxt-link>
 </template>
@@ -19,6 +19,7 @@
 import { Component, Prop, Vue } from 'vue-property-decorator'
 import ArticleSectionBack from '@/components/Article/ArticleSectionBack.vue'
 import WorkCategory from '@/components/Works/WorkCategory.vue'
+import { workDatum } from '@/assets/workData'
 
 @Component({
   components: {
@@ -27,7 +28,7 @@ import WorkCategory from '@/components/Works/WorkCategory.vue'
   }
 })
 export default class WorkAbstract extends Vue {
-  @Prop({ type: Object, required: true }) public workData!: {to: string, title: string, info: string, category: string[], image: string}
+  @Prop({ type: Object, required: true }) public workData!: workDatum
 }
 </script>
 
