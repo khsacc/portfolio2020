@@ -6,7 +6,7 @@
       </div>
       <nuxt-link to="/" class="footer__name--description">
         Hiroki Kobayashi<br>
-        Design Portfolio Website
+        Design Portfolio
       </nuxt-link>
     </div>
     <div class="footer__toc--container">
