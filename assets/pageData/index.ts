@@ -1,3 +1,5 @@
+import { workData } from '@/assets/workData'
+
 export type pageDatum = {
   path: string,
   name: string,
@@ -6,7 +8,7 @@ export type pageDatum = {
   shownFooter: boolean
 }
 
-export const pageData: pageDatum[] = [
+const otherPageData: pageDatum[] = [
   {
     path: '/',
     name: 'Top Page',
@@ -42,4 +44,17 @@ export const pageData: pageDatum[] = [
     shownTop: true,
     shownFooter: true
   }
+]
+
+const workPageData:pageDatum[] = workData.map(work => ({
+  path: work.to,
+  name: work.abstractTitle,
+  objectPosition: work.objectPosition,
+  shownTop: false,
+  shownFooter: false
+}))
+
+export const pageData = [
+  ...otherPageData,
+  ...workPageData
 ]
