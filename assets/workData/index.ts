@@ -1,8 +1,10 @@
-type eachWork = {
+export type eachWork = {
   name: string,
   path: NodeRequire,
   categories: string[],
-  comment: string
+  comment: string,
+  // width ?: number,
+  height ?: number
 }
 
 export type workDatum = {
@@ -14,7 +16,7 @@ export type workDatum = {
   info: string | null,
   detail: string,
   objectPosition: number,
-  works: eachWork[]
+  works: eachWork[],
 }
 
 export const workData:workDatum[] = [
@@ -41,7 +43,8 @@ export const workData:workDatum[] = [
         name: 'デザイン指針 ロゴ部分',
         path: require('@/assets/img/works/KF70/theme_logo.jpg'),
         categories: ['Design Direction'],
-        comment: '委員会内の制作リソースとして配布した指針の一部です。単なる図形の組み合わせとして展開するのではなく、「万華鏡」というモチーフを意識し、モチーフをどのような観点から比喩的にとらえているのかを説明し、それぞれのデザイナーが考えられるようなディレクションを目指しました。'
+        comment: '委員会内の制作リソースとして配布した指針の一部です。単なる図形の組み合わせとして展開するのではなく、「万華鏡」というモチーフを意識し、モチーフをどのような観点から比喩的にとらえているのかを説明し、それぞれのデザイナーが考えられるようなディレクションを目指しました。',
+        height: 500
       },
       {
         name: '英語版バナー',
@@ -130,13 +133,15 @@ export const workData:workDatum[] = [
         name: 'PC・タブレット版デザイン',
         path: require('@/assets/img/works/KF70pre/wide.jpg'),
         categories: ['Web'],
-        comment: ''
+        comment: '',
+        height: 500
       },
       {
         name: 'スマートフォン版デザイン',
         path: require('@/assets/img/works/KF70pre/narrow.jpg'),
         categories: ['Web'],
-        comment: ''
+        comment: '',
+        height: 650
       }
     ]
   }

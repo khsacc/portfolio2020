@@ -2,7 +2,7 @@
   <div class="workdetaillist__container">
     <div v-for="item in items" :key="item.name" class="workdetaillist__item--container">
       <div class="workdetaillist__item--image--container">
-        <img :src="item.path" class="workdetaillist__item--image--content">
+        <img :src="item.path" class="workdetaillist__item--image--content" :style="innerStyle(item)">
         <div class="workdetaillist__item--info">
           <div class="workdetaillist__item--info--name">
             {{ item.name }}
@@ -21,6 +21,7 @@
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator'
 import WorkCategory from '@/components/Works/WorkCategory.vue'
+import { eachWork } from '@/assets/workData'
 
 @Component({
   components: {
@@ -28,11 +29,11 @@ import WorkCategory from '@/components/Works/WorkCategory.vue'
   }
 })
 export default class WorkAbstract extends Vue {
-  @Prop({ type: Array, required: true }) public items!: {
-    name: string,
-    path: NodeRequire,
-    comment: string
-  }[]
+  @Prop({ type: Array, required: true }) public items!: eachWork[]
+
+  public innerStyle (item: eachWork) {
+    return item.height ? `max-height: ${item.height}px` : ''
+  }
 }
 </script>
 
