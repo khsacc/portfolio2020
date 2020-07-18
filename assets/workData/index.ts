@@ -7,6 +7,7 @@ export type workDatum = {
   info: string | null,
   categories: string[],
   detail: string,
+  objectPosition: number,
   works: {
     name: string,
     path: NodeRequire,
@@ -28,10 +29,11 @@ export const workData:workDatum[] = [
       私たちの学園祭のアウトプットにおいて中心となるのが「テーマ」と呼ばれる短いキャッチコピーと、「ボディーコピー」と呼ばれる、テーマに付随する詩です。第70回駒場祭では、数人の委員との共同制作という形で、およそ2か月をかけてテーマ・ロゴ・ボディコピーの制作を行いました。ロゴの確定後、統一して用いるカラーパレット、ロゴの展開やデザインに関する指針、書体の指定などを私が行い、委員会内に配布しました。「万華鏡を回して模様が変わること」に「学園祭を回って様々なものに出会うこと」を重ねた重層的なテーマを表現するに足るようなデザイン指針にまとめる点に苦労した記憶があります。
       広報局長は、ディレクターとしての役割も担います。日々上がってくるデザイン案に対してフィードバックを行い、ときには建設的な代案を示すこと、入稿において責任を持つことなどが挙げられます。私自身、経験の浅かったWebの分野について、デザイン・実装の両面から成長することができた学園祭でした。
       以下では、私自身が制作した制作物をいくつかご紹介します。`,
+    objectPosition: 20,
     works: [
       {
         name: 'テーマ発表画像',
-        path: require('@/assets/img/works/KF70/abstract.jpg'),
+        path: require('@/assets/img/works/KF70/theme.jpg'),
         categories: ['Illustration'],
         comment: 'テーマを一般に発表する際に、SNSに投稿した画像です。例年は動画の形式で発表することが多かったですが、ボディコピーの文章をしっかりと読んでいただくため、あえて静止画を選びました。'
       },
@@ -72,12 +74,13 @@ export const workData:workDatum[] = [
   {
     to: '/Works/MayFes2020',
     abstractTitle: '第93回五月祭「青ク咲ク」',
-    abstractImage: require('@/assets/img/works/KF70/abstract.jpg'),
+    abstractImage: require('@/assets/img/works/MF93/abstract.jpg'),
     title: '第93回五月祭',
     subTitle: '「青ク咲ク」',
     info: '2020年・共同制作',
-    categories: ['DTP Direction/Design'],
+    categories: ['DTP Design', 'DTP Direction'],
     detail: '',
+    objectPosition: 40,
     works: [
       {
         name: '',
@@ -90,12 +93,13 @@ export const workData:workDatum[] = [
   {
     to: '/Works/MayFes2019',
     abstractTitle: '第92回五月祭',
-    abstractImage: require('@/assets/img/works/KF70/abstract.jpg'),
+    abstractImage: require('@/assets/img/works/MF92/abstract.jpg'),
     title: '第92回五月祭',
     subTitle: '「〈おもしろい〉が交差する」',
     info: '2019年・共同制作',
     categories: ['DTP', 'Information Signs'],
     detail: '',
+    objectPosition: 80,
     works: [
       {
         name: '',
