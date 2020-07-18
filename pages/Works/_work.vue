@@ -7,7 +7,7 @@
     :categories="currentWork.categories"
     :dark-back="true"
   >
-    <article-section-back :max-width="800">
+    <article-section-back>
       <p v-for="line in currentWork.detail.split('\n')" :key="line">
         {{ line }}
       </p>

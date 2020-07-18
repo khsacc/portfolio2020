@@ -18,10 +18,10 @@ import { Component, Prop, Vue } from 'vue-property-decorator'
 @Component
 export default class ArticleSectionBack extends Vue {
   @Prop({ type: String, required: false }) public to?: string
-  @Prop({ type: Number, required: false }) public maxWidth?: number
+  @Prop({ type: Number, required: false, default: 800 }) public maxWidth!: number
 
   public get inlineStyle () {
-    return this.maxWidth ? `max-width: ${this.maxWidth}px` : ''
+    return `max-width: ${this.maxWidth}px`
   }
 }
 </script>
