@@ -25,6 +25,14 @@
     <div class="article__frame__slot">
       <slot />
     </div>
+    <div class="article__frame__nav">
+      <nuxt-link v-if="backPage" class="article__frame__nav--btn" :to="backPage.to">
+        {{ backPage.ja }}へ戻る
+      </nuxt-link>
+      <!-- <nuxt-link v-if="backPage" class="article__frame__nav--btn" :to="backPage.to">
+        {{ backPage.ja }}へ行く
+      </nuxt-link> -->
+    </div>
   </article>
 </template>
 
@@ -43,6 +51,17 @@ export default class ArticleFrame extends Vue {
   @Prop({ type: String, required: false }) public pageDescription ?: string
   @Prop({ type: Array, required: false }) public categories ?: string[]
   @Prop({ type: Boolean, required: false, default: () => false }) public darkBack!: boolean
+
+  public get backPage () {
+    const pathTree = this.$route.path.split('/')
+    if (pathTree.length >= 3 && pathTree[1] === 'Works') {
+      // Worksの下層ページ
+      return {
+        to: '/Works',
+        ja: '一覧ページ'
+      }
+    }
+  }
 }
 </script>
 
@@ -100,6 +119,23 @@ export default class ArticleFrame extends Vue {
   &__slot {
     width: 100%;
     margin-top: 7.5%;
+  }
+
+  &__nav {
+    margin-top: 7.5%;
+    display: flex;
+    justify-content: center;
+
+    &--btn {
+      color: white;
+      margin: 1%;
+      padding: 1%;
+      transition: 0.4s ease-in-out;
+
+      &:hover {
+        background: rgba(119, 140, 145, 0.156)
+      }
+    }
   }
 }
 </style>
