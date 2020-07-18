@@ -31,6 +31,13 @@ const otherPageData: pageDatum[] = [
     shownFooter: true
   },
   {
+    path: '/Works/search',
+    name: 'Works Search',
+    objectPosition: 55,
+    shownTop: false,
+    shownFooter: false
+  },
+  {
     path: '/Contact',
     name: 'Contact',
     objectPosition: 100,
