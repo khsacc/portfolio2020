@@ -8,7 +8,7 @@ const nuxtConfig:Configuration = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: "Hiroki Kobayashi's Design Portfolio Website" }
+      { hid: 'description', name: 'description', content: "Hiroki Kobayashi's Design Portfolio" }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -43,12 +43,6 @@ const nuxtConfig:Configuration = {
         collapseWhitespace: true
       }
     }
-  },
-  generate: {
-    // nuxt generateでは動的なパラメータを生成することができない
-    routes: [
-      '/Works/KomabaFes2019'
-    ]
   },
   typescript: {
     typecheck: {

@@ -8,7 +8,7 @@
     </div>
     <div class="portfolio__github">
       <div>
-        本サイトのソースコード（Nuxt Typescript）
+        本サイトのソースコード
       </div>
       <a href="https://github.com/khsacc/portfolio2020" target="_blank">
         <img :src="require('@/assets/img/works/portfolio_github.jpg')" class="portfolio__github--img">
