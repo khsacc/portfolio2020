@@ -13,7 +13,7 @@ export type workDatum = {
   abstractImage: NodeRequire,
   title: string,
   subTitle: string | null,
-  info: string | null,
+  info?: string,
   detail: string,
   objectPosition: number,
   works: eachWork[],
