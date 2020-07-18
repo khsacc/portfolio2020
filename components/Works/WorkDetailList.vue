@@ -53,8 +53,8 @@ export default class WorkAbstract extends Vue {
 
   &__item {
     &--container {
-      max-width: 800px;
-      width: 80%;
+      max-width: 900px;
+      width: 85%;
       margin: 15px;
 
       @include responsive(smartphone) {
