@@ -1,3 +1,5 @@
+import { Route } from 'vue-router'
+
 export type eachWork = {
   name: string,
   path: NodeRequire,
@@ -147,3 +149,12 @@ export const workData:workDatum[] = [
 ]
 
 export const getCategories = (works:eachWork[]) => works.reduce((pre:string[], cur) => Array.from(new Set([...pre, ...cur.categories])), [])
+
+export const categorySearch = (vueRoute:Route) => {
+  const categories = vueRoute.query.category
+  const searchQuery = typeof categories === 'string' ? [categories] : categories
+  return workData.reduce((pre:eachWork[], cur: workDatum) => [
+    ...pre,
+    ...cur.works.filter(work => work.categories.some(category => searchQuery.includes(category)))
+  ], [])
+}

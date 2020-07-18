@@ -19,6 +19,7 @@
           :category="category"
           :right-align="true"
           :dark-back="darkBack"
+          :searchable="true"
         />
       </div>
     </div>
