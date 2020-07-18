@@ -38,6 +38,12 @@ export const workData:workDatum[] = [
         comment: 'テーマを一般に発表する際に、SNSに投稿した画像です。例年は動画の形式で発表することが多かったですが、ボディコピーの文章をしっかりと読んでいただくため、あえて静止画を選びました。'
       },
       {
+        name: 'デザイン指針 ロゴ部分',
+        path: require('@/assets/img/works/KF70/theme_logo.jpg'),
+        categories: ['Design Direction'],
+        comment: '委員会内の制作リソースとして配布した指針の一部です。単なる図形の組み合わせとして展開するのではなく、「万華鏡」というモチーフを意識し、モチーフをどのような観点から比喩的にとらえているのかを説明し、それぞれのデザイナーが考えられるようなディレクションを目指しました。'
+      },
+      {
         name: '英語版バナー',
         path: require('@/assets/img/works/KF70/banner.jpg'),
         categories: ['Illustration'],
