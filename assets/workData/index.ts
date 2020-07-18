@@ -1,3 +1,10 @@
+type eachWork = {
+  name: string,
+  path: NodeRequire,
+  categories: string[],
+  comment: string
+}
+
 export type workDatum = {
   to: string,
   abstractTitle: string,
@@ -5,15 +12,9 @@ export type workDatum = {
   title: string,
   subTitle: string | null,
   info: string | null,
-  categories: string[],
   detail: string,
   objectPosition: number,
-  works: {
-    name: string,
-    path: NodeRequire,
-    categories: string[],
-    comment: string
-  }[]
+  works: eachWork[]
 }
 
 export const workData:workDatum[] = [
@@ -24,7 +25,6 @@ export const workData:workDatum[] = [
     title: '第70回駒場祭',
     subTitle: '「七変華」',
     info: '2019年・共同制作（広報局長）',
-    categories: ['Design Direction', 'DTP', 'Illustration', 'Information Sign', 'Web', 'Logo', 'Copy Writing'],
     detail: `私の統括した部署の職掌は、パンフレットやウェブサイトから、映像、グッズ、SNSなどの広報戦略、案内所の設置と案内サインシステムの構築を中心とした空間設計まで、多岐にわたります。
       私たちの学園祭のアウトプットにおいて中心となるのが「テーマ」と呼ばれる短いキャッチコピーと、「ボディーコピー」と呼ばれる、テーマに付随する詩です。第70回駒場祭では、数人の委員との共同制作という形で、およそ2か月をかけてテーマ・ロゴ・ボディコピーの制作を行いました。ロゴの確定後、統一して用いるカラーパレット、ロゴの展開やデザインに関する指針、書体の指定などを私が行い、委員会内に配布しました。「万華鏡を回して模様が変わること」に「学園祭を回って様々なものに出会うこと」を重ねた重層的なテーマを表現するに足るようなデザイン指針にまとめる点に苦労した記憶があります。
       広報局長は、ディレクターとしての役割も担います。日々上がってくるデザイン案に対してフィードバックを行い、ときには建設的な代案を示すこと、入稿において責任を持つことなどが挙げられます。私自身、経験の浅かったWebの分野について、デザイン・実装の両面から成長することができた学園祭でした。
@@ -84,7 +84,6 @@ export const workData:workDatum[] = [
     title: '第93回五月祭',
     subTitle: '「青ク咲ク」',
     info: '2020年・共同制作',
-    categories: ['DTP', 'Web'],
     detail: '',
     objectPosition: 35,
     works: [
@@ -103,7 +102,6 @@ export const workData:workDatum[] = [
     title: '第92回五月祭',
     subTitle: '「〈おもしろい〉が交差する」',
     info: '2019年・共同制作',
-    categories: ['DTP', 'Information Signs'],
     detail: `公式パンフレットなどを制作する印刷物担当と、案内サインを制作する案内制作担当を兼任しました。この回のロゴやテーマには一切かかわっておらず、あくまでそのおもしろい展開を考えてデザインするという立場で参加しています。
       公式パンフレットでは、積極的に制作するのではなく幅広くサポートに回るという役回りが多かったため、自分が制作したデザイン自体の数は多くないですが、私にとって、ディレクションのあり方について考える最初の機会になりました。
       案内サインの制作では、屋内に設置するサインのマスターデザインを制作しました。案内サインという独特な分野にふれられたことは新鮮で、掲載する情報はどれくらい遠い場所のものまで含めるべきか、来場者はどれくらい地図を「読むことができる」と想定するのかなど、グラフィックデザインの枠にとどまらない空間設計を考えることができたのが貴重な経験です。デザインとしては、いかに「マスター」として様々な場所に使えるか、という配慮が難しく苦労しました。
@@ -119,3 +117,5 @@ export const workData:workDatum[] = [
     ]
   }
 ]
+
+export const getCategories = (works:eachWork[]) => works.reduce((pre:string[], cur) => Array.from(new Set([...pre, ...cur.categories])), [])

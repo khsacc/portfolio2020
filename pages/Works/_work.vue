@@ -4,7 +4,7 @@
     :page-title="currentWork.title"
     :page-sub-title="currentWork.subTitle"
     :page-description="currentWork.info"
-    :categories="currentWork.categories"
+    :categories="currentCategories"
     :dark-back="true"
   >
     <article-section-back>
@@ -23,7 +23,7 @@ import {
   ArticleSectionBack,
   WorkDetailList
 } from '@/components'
-import { workData } from '@/assets/workData'
+import { workData, getCategories } from '@/assets/workData'
 
 @Component({
   components: {
@@ -40,6 +40,12 @@ export default class EachWork extends Vue {
 
   public get currentWork () {
     return workData.find(work => work.to === this.pagePath)
+  }
+
+  public get currentCategories () {
+    if (this.currentWork) {
+      return getCategories(this.currentWork.works)
+    }
   }
 }
 </script>
