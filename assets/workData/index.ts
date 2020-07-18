@@ -1,4 +1,4 @@
-export const workData:{
+export type workDatum = {
   to: string,
   abstractTitle: string,
   abstractImage: NodeRequire,
@@ -13,7 +13,9 @@ export const workData:{
     categories: string[],
     comment: string
   }[]
-}[] = [
+}
+
+export const workData:workDatum[] = [
   {
     to: '/Works/KomabaFes2019',
     abstractTitle: '第70回駒場祭「七変華」',
