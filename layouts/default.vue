@@ -70,6 +70,10 @@ p {
   line-height: 2.1em;
 }
 
+li {
+  line-height: 2.1em;
+}
+
 a {
   text-decoration: none;
 }
