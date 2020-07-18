@@ -7,7 +7,7 @@
           <div class="workdetaillist__item--info--name">
             {{ item.name }}
           </div>
-          <p>
+          <p v-if="item.comment">
             <span v-for="line in item.comment.split('\n')" :key="line" class="workdetaillist__item--info--comment">
               {{ line }}<br>
             </span>

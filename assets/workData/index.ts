@@ -2,7 +2,7 @@ export type eachWork = {
   name: string,
   path: NodeRequire,
   categories: string[],
-  comment: string,
+  comment?: string,
   // width ?: number,
   height ?: number
 }
@@ -134,14 +134,12 @@ export const workData:workDatum[] = [
         name: 'PC・タブレット版デザイン',
         path: require('@/assets/img/works/KF70pre/wide.jpg'),
         categories: ['Web'],
-        comment: '',
         height: 500
       },
       {
         name: 'スマートフォン版デザイン',
         path: require('@/assets/img/works/KF70pre/narrow.jpg'),
         categories: ['Web'],
-        comment: '',
         height: 650
       }
     ]
