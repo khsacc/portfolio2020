@@ -50,7 +50,7 @@ export default Vue.extend({
 <style lang="scss">
 html {
   font-family: 'calluna-sans', 'Noto Sans JP', sans-serif;
-  font-size: 13.5px;
+  font-size: 16px;
   font-weight: 300;
 
   @include responsive(tablet) {
