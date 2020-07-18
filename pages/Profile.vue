@@ -6,7 +6,7 @@
     >
       <article-section-back class="profile">
         <p>1999年生まれ、東京大学3年。DTPデザインが得意です。</p>
-        <h2>
+        <h2 class="profile__section">
           <span>素材をいかすこと、</span><span>世界観をつくること</span>
         </h2>
         <p>
@@ -22,7 +22,7 @@
         <p>
           私の考えるデザインのおもしろさとは、このように、素材をいかした世界観をつくることで、見てくださる方々を引き込むということができるという点にあります。それは、情報の多い紙面や案内サインから、情報の少ないイラストレーションまで同じです。ともすると「装飾」とまとめられてしまう部分かもしれませんが、それは情報伝達において必要な要素である、と考えます。それがグラフィカルにデザインをしてみなさんの前にお見せする、ということの意味ではないでしょうか。
         </p>
-        <h2>
+        <h2 class="profile__section">
           Skills
         </h2>
         <p class="skills">
@@ -45,6 +45,13 @@
             <li>Google Apps Script with Typescript (clasp)</li>
           </ul>
         </p>
+        <h2 class="profile__section">
+          今後の展望
+        </h2>
+        <ul>
+          <li>映像制作や、映像を組み込んだWebデザインの可能性を模索したいと考え、勉強中です。</li>
+          <li>フロントエンドのフレームワークにはVueを使っていますが、template内での補完が効きにくいことが悩みで、React + tsxも身につけていきたいものです。</li>
+        </ul>
       </article-section-back>
     </article-frame>
   </div>
@@ -72,12 +79,12 @@ export default class Profile extends Vue {}
   font-weight: normal;
 }
 .profile {
-  &>h2 {
-    margin-top: 25px;
+  &__section {
+    margin-top: 30px;
     font-family: adobe-garamond-pro, ten-mincho-text;
-    font-weight: normal;
+    font-weight: 300;
 
-    &>span {
+    &> span {
       display: inline-block;
     }
   }
