@@ -115,6 +115,30 @@ export const workData:workDatum[] = [
         comment: '公式パンフレットの表紙です。ロゴをうまく展開しつつ、バランス感覚を保ってデザインしました。表紙然としたデザインに仕上がったと感じています。'
       }
     ]
+  },
+  {
+    to: '/Works/KomabaFes2019pre',
+    abstractTitle: '第70回駒場祭プレサイト',
+    abstractImage: require('@/assets/img/works/KF70pre/abstract.jpg'),
+    title: '第70回駒場祭',
+    subTitle: 'プレサイト',
+    info: '2019年',
+    detail: '',
+    objectPosition: 90,
+    works: [
+      {
+        name: 'PC・タブレット版デザイン',
+        path: require('@/assets/img/works/KF70pre/wide.jpg'),
+        categories: ['Web'],
+        comment: ''
+      },
+      {
+        name: 'スマートフォン版デザイン',
+        path: require('@/assets/img/works/KF70pre/narrow.jpg'),
+        categories: ['Web'],
+        comment: ''
+      }
+    ]
   }
 ]
 
