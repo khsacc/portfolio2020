@@ -97,3 +97,8 @@ memo/
 
 # Adobe Illustrator file
 *.ai
+
+# firebase setting files
+.firebase/
+.firebaserc
+firebase.json
