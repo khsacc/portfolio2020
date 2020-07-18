@@ -31,13 +31,6 @@ const otherPageData: pageDatum[] = [
     shownFooter: true
   },
   {
-    path: '/Works/KomabaFes2019',
-    name: '第70回駒場祭',
-    objectPosition: 20,
-    shownTop: false,
-    shownFooter: false
-  },
-  {
     path: '/Contact',
     name: 'Contact',
     objectPosition: 100,
