@@ -3,7 +3,7 @@
     v-if="currentWork"
     :page-title="currentWork.title"
     :page-sub-title="currentWork.subTitle"
-    :page-description="currentWork.description"
+    :page-description="currentWork.info"
     :categories="currentWork.categories"
     :dark-back="true"
   >
