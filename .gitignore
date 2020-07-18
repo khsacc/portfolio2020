@@ -96,7 +96,7 @@ sw.*
 memo/
 
 # Adobe Illustrator file
-*.ai
+assets/Illustrator/
 
 # firebase setting files
 .firebase/
