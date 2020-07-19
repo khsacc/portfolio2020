@@ -52,9 +52,10 @@ html {
   font-family: 'calluna-sans', 'Noto Sans JP', sans-serif;
   font-size: 16px;
   font-weight: 300;
+  color: white;
 
   @include responsive(tablet) {
-    font-size: 14px;
+    font-size: 15px;
   }
 }
 
