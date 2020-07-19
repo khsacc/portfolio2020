@@ -17,28 +17,28 @@ const otherPageData: pageDatum[] = [
     shownFooter: true
   },
   {
-    path: '/Profile',
+    path: '/profile',
     name: 'Profile',
     objectPosition: 65,
     shownTop: true,
     shownFooter: true
   },
   {
-    path: '/Works',
+    path: '/works',
     name: 'Works',
     objectPosition: 45,
     shownTop: true,
     shownFooter: true
   },
   {
-    path: '/Works/search',
+    path: '/works/search',
     name: 'Works Search',
     objectPosition: 55,
     shownTop: false,
     shownFooter: false
   },
   {
-    path: '/Contact',
+    path: '/contact',
     name: 'Contact',
     objectPosition: 100,
     shownTop: true,

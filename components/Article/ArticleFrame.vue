@@ -55,10 +55,10 @@ export default class ArticleFrame extends Vue {
 
   public get backPage () {
     const pathTree = this.$route.path.split('/')
-    if (pathTree.length >= 3 && pathTree[1] === 'Works') {
+    if (pathTree.length >= 3 && pathTree[1] === 'works') {
       // Worksの下層ページ
       return {
-        to: '/Works',
+        to: '/works',
         ja: '一覧ページ'
       }
     }

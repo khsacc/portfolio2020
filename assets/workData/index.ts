@@ -23,7 +23,7 @@ export type workDatum = {
 
 export const workData:workDatum[] = [
   {
-    to: '/Works/KomabaFes2019',
+    to: '/works/KomabaFes2019',
     abstractTitle: '第70回駒場祭「七変華」',
     abstractImage: require('@/assets/img/works/KF70/abstract.jpg'),
     title: '第70回駒場祭',
@@ -83,7 +83,7 @@ export const workData:workDatum[] = [
     ]
   },
   {
-    to: '/Works/MayFes2020',
+    to: '/works/MayFes2020',
     abstractTitle: '第93回五月祭「青ク咲ク」',
     abstractImage: require('@/assets/img/works/MF93/abstract.jpg'),
     title: '第93回五月祭',
@@ -101,7 +101,7 @@ export const workData:workDatum[] = [
     ]
   },
   {
-    to: '/Works/MayFes2019',
+    to: '/works/MayFes2019',
     abstractTitle: '第92回五月祭',
     abstractImage: require('@/assets/img/works/MF92/abstract.jpg'),
     title: '第92回五月祭',
@@ -122,7 +122,7 @@ export const workData:workDatum[] = [
     ]
   },
   {
-    to: '/Works/KomabaFes2019pre',
+    to: '/works/KomabaFes2019pre',
     abstractTitle: '第70回駒場祭プレサイト',
     abstractImage: require('@/assets/img/works/KF70pre/abstract.jpg'),
     title: '第70回駒場祭',

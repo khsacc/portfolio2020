@@ -2,7 +2,7 @@
   <!-- 将来的にtsx化したい -->
   <nuxt-link
     v-if="searchable"
-    :to="`/Works/search?category=${category}`"
+    :to="`/works/search?category=${category}`"
     :class="`work__category__element ${darkBack ? 'work__category__element--darkBack' : ''}`"
     :style="`margin-${rightAlign ? 'left' : 'right'}: 2%;`"
   >
