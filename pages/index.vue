@@ -84,6 +84,10 @@ export default class Index extends Vue {}
       // font-size: 5vw;
       margin-top: 10%;
 
+      @include responsive(tablet) {
+        margin-top: 25%;
+      }
+
       @include responsive(smartphone) {
         margin-bottom: 10%;
       }
