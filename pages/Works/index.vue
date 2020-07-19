@@ -48,7 +48,8 @@ export default class Works extends Vue {
   public worksData = workData
   public categoryExample = [
     'DTP',
-    'Web'
+    'Web',
+    'Illustration'
   ]
 }
 </script>
