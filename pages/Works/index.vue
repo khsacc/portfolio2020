@@ -6,6 +6,19 @@
     <div class="abstract__container">
       <work-abstract v-for="work in worksData" :key="work.abstractTitle" :work-data="work" />
     </div>
+    <div class="portfolio__search">
+      <div class="portfolio__search--title">
+        カテゴリ別検索
+      </div>
+      <nuxt-link
+        v-for="category in categoryExample"
+        :key="category"
+        :to="`/works/search?category=${category}`"
+        class="portfolio__search--link"
+      >
+        #{{ category }}
+      </nuxt-link>
+    </div>
     <div class="portfolio__github">
       <div>
         本サイトのソースコード
@@ -33,6 +46,10 @@ import {
 })
 export default class Works extends Vue {
   public worksData = workData
+  public categoryExample = [
+    'DTP',
+    'Web'
+  ]
 }
 </script>
 
@@ -46,6 +63,20 @@ export default class Works extends Vue {
 }
 
 .portfolio {
+  &__search {
+    text-align: center;
+
+    &--title {
+      margin: 10px 0;
+    }
+
+    &--link {
+      color: #f0d3ae;
+      text-decoration: underline;
+      margin-right: 0.3em;
+    }
+  }
+
   &__github{
     display: flex;
     flex-direction: column;

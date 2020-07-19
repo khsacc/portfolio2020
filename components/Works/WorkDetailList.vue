@@ -13,6 +13,18 @@
             </span>
           </p>
         </div>
+        <div class="workdetaillist__item--category--container">
+          <span v-if="item.parent">work: <nuxt-link :to="item.parentPath" class="workdetaillist__item--work--link">{{ item.parent }}</nuxt-link></span>
+          category:
+          <nuxt-link
+            v-for="category in item.categories"
+            :key="category"
+            :to="`/works/search?category=${category}`"
+            class="workdetaillist__item--category--link"
+          >
+            #{{ category }}
+          </nuxt-link>
+        </div>
       </div>
     </div>
   </div>
@@ -88,6 +100,22 @@ export default class WorkAbstract extends Vue {
       &--name {
         font-weight: bold;
         text-align: center;
+      }
+    }
+
+    &--work {
+      &--link {
+        color: #f0d3ae;
+        text-decoration: underline;
+        margin-right: 0.3em;
+      }
+    }
+
+    &--category {
+      &--link {
+        color: #f0d3ae;
+        text-decoration: underline;
+        margin-right: 0.3em;
       }
     }
   }

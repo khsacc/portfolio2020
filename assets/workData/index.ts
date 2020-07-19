@@ -38,13 +38,13 @@ export const workData:workDatum[] = [
       {
         name: 'テーマ発表画像',
         path: require('@/assets/img/works/KF70/theme.jpg'),
-        categories: ['Illustration'],
+        categories: ['Illustration', 'Logo'],
         comment: 'テーマを一般に発表する際に、SNSに投稿した画像です。例年は動画の形式で発表することが多かったですが、ボディコピーの文章をしっかりと読んでいただくため、あえて静止画を選びました。'
       },
       {
         name: 'デザイン指針 ロゴ部分',
         path: require('@/assets/img/works/KF70/theme_logo.jpg'),
-        categories: ['Design Direction'],
+        categories: ['Design Direction', 'Logo'],
         comment: '委員会内の制作リソースとして配布した指針の一部です。単なる図形の組み合わせとして展開するのではなく、「万華鏡」というモチーフを意識し、モチーフをどのような観点から比喩的にとらえているのかを説明し、それぞれのデザイナーが考えられるようなディレクションを目指しました。',
         height: 500
       },
@@ -153,8 +153,8 @@ export const getCategories = (works:eachWork[]) => works.reduce((pre:string[], c
 export const categorySearch = (vueRoute:Route) => {
   const categories = vueRoute.query.category
   const searchQuery = typeof categories === 'string' ? [categories] : categories
-  return workData.reduce((pre:eachWork[], cur: workDatum) => [
+  return workData.reduce((pre:(eachWork & {parent: string, parentPath: string})[], cur) => [
     ...pre,
-    ...cur.works.filter(work => work.categories.some(category => searchQuery.includes(category)))
+    ...cur.works.filter(work => work.categories.some(category => searchQuery.includes(category))).map(e => ({ ...e, parent: cur.abstractTitle, parentPath: cur.to }))
   ], [])
 }

@@ -9,7 +9,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator'
+import { Component, Vue, Watch } from 'vue-property-decorator'
 import { categorySearch } from '@/assets/workData'
 import {
   ArticleFrame,
@@ -27,6 +27,15 @@ export default class Search extends Vue {
     if (this.$route.query.category) {
       return categorySearch(this.$route)
     }
+  }
+
+  public get currentCategory () {
+    return this.$route.query.category
+  }
+
+  @Watch('currentCategory')
+  onChangeCategory () {
+    setTimeout(() => scroll(0, 0), 750)
   }
 }
 </script>
