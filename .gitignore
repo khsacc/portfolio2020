@@ -97,8 +97,3 @@ memo/
 
 # Adobe Illustrator file
 assets/Illustrator/
-
-# firebase setting files
-.firebase/
-.firebaserc
-firebase.json
