@@ -20,7 +20,7 @@
       </nuxt-link>
     </div>
     <div class="portfolio__github">
-      <div>
+      <div class="portfolio__github--title">
         本サイトのソースコード
       </div>
       <a href="https://github.com/khsacc/portfolio2020" target="_blank">
@@ -85,9 +85,12 @@ export default class Works extends Vue {
     margin-top: 5%;
     text-align: center;
 
+    &--title {
+      margin-bottom: 10px;
+    }
+
     &--img {
       width: 450px;
-      margin-top: 10px;
       transition:  0.6s ease-in-out;
 
       @include responsive(tablet) {
