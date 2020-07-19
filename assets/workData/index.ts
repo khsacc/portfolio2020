@@ -93,9 +93,9 @@ export const workData:workDatum[] = [
     objectPosition: 35,
     works: [
       {
-        name: '',
-        path: require('@/assets/img/works/KF70/3D_info.jpg'),
-        categories: [''],
+        name: '東京大学新聞 出稿広告',
+        path: require('@/assets/img/works/MF93/todai_shimbun.jpg'),
+        categories: ['DTP'],
         comment: ''
       }
     ]
