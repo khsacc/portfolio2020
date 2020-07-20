@@ -8,7 +8,7 @@
       :src="require('@/assets/img/pageBackground.png')"
       :style="{objectPosition: `0 ${backgroundObjectPosition}%`}"
     >
-    <transition name="page">
+    <transition name="page" @after-enter="onPageTransition">
       <div :key="$route.path">
         <Nuxt class="nuxtpage__eachpage" />
         <footer-design />
@@ -18,34 +18,29 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import { Component, Vue } from 'vue-property-decorator'
 import { pageData } from '@/assets/pageData'
 import {
   HeaderDesign,
   FooterDesign
 } from '@/components'
 
-export default Vue.extend({
+@Component({
   components: {
     HeaderDesign,
     FooterDesign
-  },
-  data: () => ({
-    displayContent: true
-  }),
-  computed: {
-    backgroundObjectPosition () {
-      const currentPage = pageData.find(page => page.path === this.$route.path)
-      return currentPage ? currentPage.objectPosition : 8
-    }
-  },
-  watch: {
-    $route () {
-      this.displayContent = false
-      setTimeout(() => { this.displayContent = true }, 1500)
-    }
   }
 })
+export default class DefaultLayout extends Vue {
+  public get backgroundObjectPosition () {
+    const currentPage = pageData.find(page => page.path === this.$route.path)
+    return currentPage ? currentPage.objectPosition : 8
+  }
+
+  public onPageTransition () {
+    window.scroll(0, 0)
+  }
+}
 </script>
 
 <style lang="scss">
