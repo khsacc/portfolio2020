@@ -6,8 +6,12 @@
       :src="require('@/assets/img/pageBackground.png')"
       :style="{objectPosition: `0 ${backgroundObjectPosition}%`}"
     >
-    <Nuxt class="nuxtpage__eachpage disappear-on-page-transition" :style="{opacity: displayContent ? '1' : '0'}" />
-    <footer-design class="disappear-on-page-transition" :style="{opacity: displayContent ? '1' : '0'}" />
+    <transition name="page">
+      <div :key="$route.path">
+        <Nuxt class="nuxtpage__eachpage" />
+        <footer-design />
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -84,10 +88,6 @@ a[target=_blank] {
   color: #a4d8ee;
 }
 
-.disappear-on-page-transition {
-  transition: opacity 0.5s
-}
-
 .header {
   position: fixed;
   right: 8%;
@@ -114,6 +114,26 @@ a[target=_blank] {
 
   &__eachpage {
     min-height: 100vh;
+  }
+}
+
+// page transition animation settings
+.page {
+  &-enter-active {
+    transition: all 0.5s 1s cubic-bezier(.82,.01,.77,1.01);
+  }
+
+  &-enter {
+    opacity: 0;
+  }
+
+  &-leave-active {
+    transition: all 0.5s cubic-bezier(.75,.01,1,.53);
+  }
+
+  &-leave-to {
+    opacity: 0;
+    transform: translateY(-10px);
   }
 }
 
