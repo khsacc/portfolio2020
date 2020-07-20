@@ -158,3 +158,8 @@ export const categorySearch = (vueRoute:Route) => {
     ...cur.works.filter(work => work.categories.some(category => searchQuery.includes(category))).map(e => ({ ...e, parent: cur.abstractTitle, parentPath: cur.to }))
   ], [])
 }
+
+export const allCategories = Array.from(new Set(workData.reduce((pre:string[], cur) => [
+  ...pre,
+  ...getCategories(cur.works)
+], []))).sort()

@@ -4,21 +4,9 @@
     page-description="カードをクリックして詳細をご覧ください"
   >
     <div class="abstract__container">
-      <work-abstract v-for="work in worksData" :key="work.abstractTitle" :work-data="work" />
+      <work-abstract v-for="work in workData" :key="work.abstractTitle" :work-data="work" />
     </div>
-    <div class="portfolio__search">
-      <div class="portfolio__search--title">
-        カテゴリ別検索
-      </div>
-      <nuxt-link
-        v-for="category in categoryExample"
-        :key="category"
-        :to="`/works/search?category=${category}`"
-        class="portfolio__search--link"
-      >
-        #{{ category }}
-      </nuxt-link>
-    </div>
+    <work-search-example />
     <div class="portfolio__github">
       <div class="portfolio__github--title">
         本サイトのソースコード
@@ -35,22 +23,19 @@ import { Component, Vue } from 'vue-property-decorator'
 import { workData } from '@/assets/workData'
 import {
   ArticleFrame,
-  WorkAbstract
+  WorkAbstract,
+  WorkSearchExample
 } from '@/components'
 
 @Component({
   components: {
     ArticleFrame,
-    WorkAbstract
+    WorkAbstract,
+    WorkSearchExample
   }
 })
 export default class Works extends Vue {
-  public worksData = workData
-  public categoryExample = [
-    'DTP',
-    'Web',
-    'Illustration'
-  ]
+  public workData = workData
 }
 </script>
 
@@ -64,20 +49,6 @@ export default class Works extends Vue {
 }
 
 .portfolio {
-  &__search {
-    text-align: center;
-
-    &--title {
-      margin: 10px 0;
-    }
-
-    &--link {
-      color: #f0d3ae;
-      text-decoration: underline;
-      margin-right: 0.3em;
-    }
-  }
-
   &__github{
     display: flex;
     flex-direction: column;
