@@ -4,8 +4,9 @@
       <header-design v-if="$route.path !== '/'" class="header" />
     </transition>
     <img
-      :class="`nuxtpage__background nuxtpage__background--${$route.path.replace(/\//g, '-')}`"
+      class="nuxtpage__background"
       :src="require('@/assets/img/pageBackground.png')"
+      :style="{objectPosition: `0 ${backgroundObjectPosition}%`}"
     >
     <transition name="page">
       <div :key="$route.path">
@@ -29,19 +30,10 @@ export default Vue.extend({
     HeaderDesign,
     FooterDesign
   },
-  data: () => ({
-    displayContent: true
-  }),
   computed: {
     backgroundObjectPosition () {
       const currentPage = pageData.find(page => page.path === this.$route.path)
       return currentPage ? currentPage.objectPosition : 8
-    }
-  },
-  watch: {
-    $route () {
-      this.displayContent = false
-      setTimeout(() => { this.displayContent = true }, 1500)
     }
   }
 })
@@ -116,13 +108,6 @@ a[target=_blank] {
     transition: object-position 1.65s cubic-bezier(.61,0,.17,1);
 
     @include z-index(nuxtpage__background)
-
-    &--- {
-      object-position: 0 10%;
-    }
-    &---profile {
-      object-position: 0 50%;
-    }
   }
 
   &__eachpage {
