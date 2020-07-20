@@ -18,25 +18,25 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import { Component, Vue } from 'vue-property-decorator'
 import { pageData } from '@/assets/pageData'
 import {
   HeaderDesign,
   FooterDesign
 } from '@/components'
 
-export default Vue.extend({
+@Component({
   components: {
     HeaderDesign,
     FooterDesign
-  },
-  computed: {
-    backgroundObjectPosition () {
-      const currentPage = pageData.find(page => page.path === this.$route.path)
-      return currentPage ? currentPage.objectPosition : 8
-    }
   }
 })
+export default class DefaultLayout extends Vue {
+  public get backgroundObjectPosition () {
+    const currentPage = pageData.find(page => page.path === this.$route.path)
+    return currentPage ? currentPage.objectPosition : 8
+  }
+}
 </script>
 
 <style lang="scss">
