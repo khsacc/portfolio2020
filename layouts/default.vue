@@ -8,7 +8,7 @@
       :src="require('@/assets/img/pageBackground.png')"
       :style="{objectPosition: `0 ${backgroundObjectPosition}%`}"
     >
-    <transition name="page">
+    <transition name="page" @after-enter="onPageTransition">
       <div :key="$route.path">
         <Nuxt class="nuxtpage__eachpage" />
         <footer-design />
@@ -35,6 +35,10 @@ export default class DefaultLayout extends Vue {
   public get backgroundObjectPosition () {
     const currentPage = pageData.find(page => page.path === this.$route.path)
     return currentPage ? currentPage.objectPosition : 8
+  }
+
+  public onPageTransition () {
+    window.scroll(0, 0)
   }
 }
 </script>
