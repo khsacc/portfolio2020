@@ -25,7 +25,7 @@ $ yarn dev
 Design layout outputs such as AdobeXD file is not provided. All designs are coding-based.
 
 ## Deploy
-Dev branch would be published on [https://portfolio2020-git-master.khsacc.vercel.app/](https://portfolio2020-git-master.khsacc.vercel.app/). As pushed to dev, vercel would automatically build and publish the latest contents.
+Dev branch would be published on [https://khsacc-portfolio2020-dev.vercel.app/](https://khsacc-portfolio2020-dev.vercel.app/). As pushed to dev, vercel would automatically build and publish the latest contents.
 
 ## Contact
 If you want to contact me, send an e-mail to ``k.hiroki1.732[at]gmail.com`` (replace [at] with @)
