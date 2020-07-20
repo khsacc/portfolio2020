@@ -3,7 +3,7 @@
     <header-design class="header" :style="showHeader" />
     <img
       class="nuxtpage__background"
-      :src="require('@/assets/img/pageBackground.jpg')"
+      :src="require('@/assets/img/pageBackground.png')"
       :style="{objectPosition: `0 ${backgroundObjectPosition}%`}"
     >
     <Nuxt class="nuxtpage__eachpage disappear-on-page-transition" :style="{opacity: displayContent ? '1' : '0'}" />
