@@ -1,6 +1,8 @@
 <template>
   <div>
-    <header-design class="header" :style="showHeader" />
+    <transition name="header__transition">
+      <header-design v-if="$route.path !== '/'" class="header" />
+    </transition>
     <img
       class="nuxtpage__background"
       :src="require('@/assets/img/pageBackground.png')"
@@ -35,11 +37,6 @@ export default Vue.extend({
     backgroundObjectPosition () {
       const currentPage = pageData.find(page => page.path === this.$route.path)
       return currentPage ? currentPage.objectPosition : 8
-    },
-    showHeader () {
-      return this.$route.path !== '/'
-        ? { opacity: '1', top: '0' }
-        : { opacity: '0', top: '-20%' }
     }
   },
   watch: {
@@ -91,10 +88,20 @@ a[target=_blank] {
 .header {
   position: fixed;
   right: 8%;
-  transition: all 1.3s cubic-bezier(.78,-0.34,.21,1.36);
 
   @include responsive(smartphone) {
     left: 8%;
+  }
+
+  &__transition {
+    &-enter-active, &-leave-active {
+        transition: all 1.3s cubic-bezier(.78,-0.34,.21,1.36);
+    }
+
+    &-enter, &-leave-to {
+      transform: translateY(-20%);
+      opacity: 0;
+    }
   }
 }
 
