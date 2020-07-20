@@ -1,13 +1,19 @@
 <template>
   <div>
-    <header-design class="header" :style="showHeader" />
+    <transition name="header__transition">
+      <header-design v-if="$route.path !== '/'" class="header" />
+    </transition>
     <img
       class="nuxtpage__background"
       :src="require('@/assets/img/pageBackground.png')"
       :style="{objectPosition: `0 ${backgroundObjectPosition}%`}"
     >
-    <Nuxt class="nuxtpage__eachpage disappear-on-page-transition" :style="{opacity: displayContent ? '1' : '0'}" />
-    <footer-design class="disappear-on-page-transition" :style="{opacity: displayContent ? '1' : '0'}" />
+    <transition name="page">
+      <div :key="$route.path">
+        <Nuxt class="nuxtpage__eachpage" />
+        <footer-design />
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -31,11 +37,6 @@ export default Vue.extend({
     backgroundObjectPosition () {
       const currentPage = pageData.find(page => page.path === this.$route.path)
       return currentPage ? currentPage.objectPosition : 8
-    },
-    showHeader () {
-      return this.$route.path !== '/'
-        ? { opacity: '1', top: '0' }
-        : { opacity: '0', top: '-20%' }
     }
   },
   watch: {
@@ -84,17 +85,23 @@ a[target=_blank] {
   color: #a4d8ee;
 }
 
-.disappear-on-page-transition {
-  transition: opacity 0.5s
-}
-
 .header {
   position: fixed;
   right: 8%;
-  transition: all 1.3s cubic-bezier(.78,-0.34,.21,1.36);
 
   @include responsive(smartphone) {
     left: 8%;
+  }
+
+  &__transition {
+    &-enter-active, &-leave-active {
+        transition: all 1.3s cubic-bezier(.78,-0.34,.21,1.36);
+    }
+
+    &-enter, &-leave-to {
+      transform: translateY(-20%);
+      opacity: 0;
+    }
   }
 }
 
@@ -107,15 +114,33 @@ a[target=_blank] {
     width: 100%;
     height: 100vh;
     object-fit: cover;
-    transition: all 1.65s cubic-bezier(.61,0,.17,1);
-    // -webkit-transition: all 1.65s cubic-bezier(.61,0,.17,1);
-    // object-position: 0 8%;
+    transition: object-position 1.65s cubic-bezier(.61,0,.17,1);
 
     @include z-index(nuxtpage__background)
   }
 
   &__eachpage {
     min-height: 100vh;
+  }
+}
+
+// page transition animation settings
+.page {
+  &-enter-active {
+    transition: all 0.5s 1s cubic-bezier(.82,.01,.77,1.01);
+  }
+
+  &-enter {
+    opacity: 0;
+  }
+
+  &-leave-active {
+    transition: all 0.5s cubic-bezier(.75,.01,1,.53);
+  }
+
+  &-leave-to {
+    opacity: 0;
+    transform: translateY(-10px);
   }
 }
 
