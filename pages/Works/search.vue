@@ -8,7 +8,7 @@
       :page-description="`「${$route.query.category}」の検索結果`"
     >
       <work-detail-list v-if="searchResults" :items="searchResults" />
-      <work-search-example title="ほかのカテゴリで探す" :exclude="$route.query.category" />
+      <work-search-example title="ほかのカテゴリも探す" :exclude="$route.query.category" />
     </article-frame>
   </transition>
 </template>
