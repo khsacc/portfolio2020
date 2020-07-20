@@ -108,8 +108,6 @@ a[target=_blank] {
     height: 100vh;
     object-fit: cover;
     transition: object-position 1.65s cubic-bezier(.61,0,.17,1);
-    -webkit-transition: -webkit-object-position 1.65s cubic-bezier(.61,0,.17,1);
-    // object-position: 0 8%;
 
     @include z-index(nuxtpage__background)
   }
