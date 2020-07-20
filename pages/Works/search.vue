@@ -1,11 +1,16 @@
 <template>
-  <article-frame
-    page-title="Works Search"
-    page-sub-title="カテゴリ別検索"
-    :page-description="`「${$route.query.category}」の検索結果`"
-  >
-    <work-detail-list v-if="searchResults" :items="searchResults" />
-  </article-frame>
+  <transition name="searchPage">
+    <article-frame
+      id="SearchTop"
+      :key="$route.query.category"
+      page-title="Works Search"
+      page-sub-title="カテゴリ別検索"
+      :page-description="`「${$route.query.category}」の検索結果`"
+    >
+      <work-detail-list v-if="searchResults" :items="searchResults" />
+      <work-search-example title="ほかのカテゴリも探す" :exclude="$route.query.category" />
+    </article-frame>
+  </transition>
 </template>
 
 <script lang="ts">
@@ -13,13 +18,15 @@ import { Component, Vue, Watch } from 'vue-property-decorator'
 import { categorySearch } from '@/assets/workData'
 import {
   ArticleFrame,
-  WorkDetailList
+  WorkDetailList,
+  WorkSearchExample
 } from '@/components'
 
 @Component({
   components: {
     ArticleFrame,
-    WorkDetailList
+    WorkDetailList,
+    WorkSearchExample
   }
 })
 export default class Search extends Vue {
@@ -35,7 +42,29 @@ export default class Search extends Vue {
 
   @Watch('currentCategory')
   onChangeCategory () {
-    setTimeout(() => scroll(0, 0), 750)
+    window.scrollTo(0,0)
+    // setTimeout(() => { this.$scrollTo('#SearchTop') }, 250)
+    // this.$scrollTo('#SearchTop')
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.searchPage {
+  &-enter-active {
+    transition: all 0.25s 1s cubic-bezier(.82,.01,.77,1.01);
+  }
+
+  &-enter {
+    opacity: 0;
+  }
+
+  &-leave-active {
+    transition: all 0.25s cubic-bezier(.75,.01,1,.53);
+  }
+
+  &-leave-to {
+    opacity: 0;
+  }
+}
+</style>

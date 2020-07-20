@@ -9,6 +9,8 @@ import ArticleSectionBack from './Article/ArticleSectionBack.vue'
 // used in the Works page
 import WorkAbstract from './Works/WorkAbstract.vue'
 import WorkDetailList from './Works/WorkDetailList.vue'
+// used in the Works Search page
+import WorkSearchExample from './Works/WorkSearchExample.vue'
 
 export {
   HeaderDesign,
@@ -17,5 +19,6 @@ export {
   ArticleFrame,
   ArticleSectionBack,
   WorkAbstract,
-  WorkDetailList
+  WorkDetailList,
+  WorkSearchExample
 }
