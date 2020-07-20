@@ -26,7 +26,7 @@ Design layout outputs such as AdobeXD file is not provided. All designs are codi
 
 ## Deploy
 This project would be automatically published via Versel as pushed to GitHub.
-- ``dev`` branch: [https://khsacc-portfolio2020-dev.vercel.app/](https://khsacc-portfolio2020-dev.vercel.app/).
+- ``dev`` branch: [https://portfolio2020-git-dev.khsacc.vercel.app/](https://portfolio2020-git-dev.khsacc.vercel.app/).
 - ``master`` branch: [https://hiroki-design.vercel.app/](https://hiroki-design.vercel.app/)
 
 ## Contact
