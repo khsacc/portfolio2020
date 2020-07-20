@@ -75,6 +75,7 @@ export default class ArticleFrame extends Vue {
 
   &__title {
   font-weight: normal;
+  font-feature-settings: 'palt';
 
   @include responsive(smartphone) {
     font-size: 42px;
@@ -103,6 +104,7 @@ export default class ArticleFrame extends Vue {
     font-family: adobe-garamond-pro, ten-mincho-text;
     font-size: 75%;
     font-weight: normal;
+    font-feature-settings: 'palt';
   }
 
   &__description {
