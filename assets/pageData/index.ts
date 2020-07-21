@@ -19,7 +19,7 @@ const otherPageData: pageDatum[] = [
   {
     path: '/profile',
     name: 'Profile',
-    objectPosition: 65,
+    objectPosition: 100,
     shownTop: true,
     shownFooter: true
   },
