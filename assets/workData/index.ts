@@ -97,6 +97,12 @@ export const workData:workDatum[] = [
         path: require('@/assets/img/works/MF93/todai_shimbun.png'),
         categories: ['DTP'],
         comment: ''
+      },
+      {
+        name: "学内向け配布資料 表紙",
+        path: require('@/assets/img/works/MF93/almighty_cover.jpg'),
+        categories: ['DTP'],
+        comment: ''
       }
     ]
   },
