@@ -77,6 +77,16 @@ html {
   display: none;
 }
 
+::selection {
+  background: rgb(115, 157, 172);
+  color: white;
+}
+
+::-moz-selection {
+  background: rgb(115, 157, 172);
+  color: white;
+}
+
 p {
   margin: 0.5em 0;
   line-height: 2.1em;
