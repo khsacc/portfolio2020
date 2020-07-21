@@ -14,7 +14,7 @@ export type workDatum = {
   abstractTitle: string,
   abstractImage: NodeRequire,
   title: string,
-  subTitle: string | null,
+  subTitle?: string,
   info?: string,
   detail: string,
   objectPosition: number,
@@ -163,6 +163,23 @@ export const workData:workDatum[] = [
         categories: ['Web'],
         height: 650
       }
+    ]
+  },
+  {
+    to: '/works/Qtanka2019',
+    abstractTitle: 'Q短歌会機関紙 第2号',
+    abstractImage: require('@/assets/img/works/Q2019/abstract.jpg'),
+    title: 'Q短歌会機関紙 第2号',
+    info: '2019年',
+    detail: `学生短歌会の機関誌のDTPを担当しました。作品の都合上お見せできない部分も多く、ここでご紹介できないのが残念ですが、「ことば」を主役としたデザインにじっくり取り組んだのはこれが初めてでした。以前から文字組に関心はもっていましたが、「文字だけでも力強いデザイン要素になる」と改めて感じるきっかけになった作品です。
+    東京大学生協書籍部などで販売されています。`,
+    objectPosition: 60,
+    works: [
+      {
+        name: '特集紙面',
+        path: require('@/assets/img/works/Q2019/content.png'),
+        categories: ['DTP'],
+      },
     ]
   }
 ]

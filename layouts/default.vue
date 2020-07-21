@@ -68,6 +68,13 @@ html {
 *::after {
   box-sizing: border-box;
   margin: 0;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 p {
