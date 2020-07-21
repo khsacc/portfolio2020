@@ -37,13 +37,6 @@ const otherPageData: pageDatum[] = [
     shownTop: false,
     shownFooter: false
   },
-  {
-    path: '/contact',
-    name: 'Contact',
-    objectPosition: 100,
-    shownTop: true,
-    shownFooter: true
-  }
 ]
 
 const workPageData:pageDatum[] = workData.map(work => ({
