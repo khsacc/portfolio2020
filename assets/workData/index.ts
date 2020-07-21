@@ -43,7 +43,7 @@ export const workData:workDatum[] = [
       },
       {
         name: 'デザイン指針 ロゴ部分',
-        path: require('@/assets/img/works/KF70/theme_logo.jpg'),
+        path: require('@/assets/img/works/KF70/theme_logo.png'),
         categories: ['Design Direction', 'Logo'],
         comment: '委員会内の制作リソースとして配布した指針の一部です。単なる図形の組み合わせとして展開するのではなく、「万華鏡」というモチーフを意識し、モチーフをどのような観点から比喩的にとらえているのかを説明し、それぞれのデザイナーが考えられるようなディレクションを目指しました。',
         height: 500
