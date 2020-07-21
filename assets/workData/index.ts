@@ -83,6 +83,31 @@ export const workData:workDatum[] = [
     ]
   },
   {
+    to: '/works/KomabaFes2019pre',
+    abstractTitle: '第70回駒場祭プレサイト',
+    abstractImage: require('@/assets/img/works/KF70pre/abstract.jpg'),
+    title: '第70回駒場祭',
+    subTitle: 'プレサイト',
+    info: '2019年',
+    detail: `プレサイトは、協賛のお願いなどを目的として制作されるウェブサイトであり、テーマが決定する前から制作します。そのため、第70回駒場祭の作品ではありますが、別のページを立てました。
+      このプレサイトの制作は、ウェブデザインの形で関わりました（実装には携わっていません）。情報量が少ないウェブサイトではありますが、学園祭に向けて着実に準備が進んでいるというわくわく感を表現してみました。デザインに充てられる時間も1日程度と短く、また初めてのウェブデザインの作品ではありましたが、こざっぱりとしていて悪くない仕上がりになっていると思っています。`,
+    objectPosition: 90,
+    works: [
+      {
+        name: 'PC・タブレット版デザイン',
+        path: require('@/assets/img/works/KF70pre/wide.jpg'),
+        categories: ['Web'],
+        height: 500
+      },
+      {
+        name: 'スマートフォン版デザイン',
+        path: require('@/assets/img/works/KF70pre/narrow.jpg'),
+        categories: ['Web'],
+        height: 650
+      }
+    ]
+  },
+  {
     to: '/works/MayFes2020',
     abstractTitle: '第93回五月祭「青ク咲ク」',
     abstractImage: require('@/assets/img/works/MF93/abstract.jpg'),
@@ -144,31 +169,13 @@ export const workData:workDatum[] = [
         comment: '屋内に設置した案内サインです。キャンパスを4つのエリアに分け、それぞれに割り当てられた色をメイン使用して潜在的な案内効果を高めています。このデザインは、各建物内に設置されるサインの「マスターデザイン」であるとともに、実際に設置されたもののひとつでもあります。この建物は特に案内が難しく、地図や文言の配置に心を砕きました。',
         height: 650
       },
-    ]
-  },
-  {
-    to: '/works/KomabaFes2019pre',
-    abstractTitle: '第70回駒場祭プレサイト',
-    abstractImage: require('@/assets/img/works/KF70pre/abstract.jpg'),
-    title: '第70回駒場祭',
-    subTitle: 'プレサイト',
-    info: '2019年',
-    detail: `プレサイトは、協賛のお願いなどを目的として制作されるウェブサイトであり、テーマが決定する前から制作します。そのため、第70回駒場祭の作品ではありますが、別のページを立てました。
-      このプレサイトの制作は、ウェブデザインの形で関わりました（実装には携わっていません）。情報量が少ないウェブサイトではありますが、学園祭に向けて着実に準備が進んでいるというわくわく感を表現してみました。デザインに充てられる時間も1日程度と短く、また初めてのウェブデザインの作品ではありましたが、こざっぱりとしていて悪くない仕上がりになっていると思っています。`,
-    objectPosition: 90,
-    works: [
       {
-        name: 'PC・タブレット版デザイン',
-        path: require('@/assets/img/works/KF70pre/wide.jpg'),
-        categories: ['Web'],
-        height: 500
-      },
-      {
-        name: 'スマートフォン版デザイン',
-        path: require('@/assets/img/works/KF70pre/narrow.jpg'),
-        categories: ['Web'],
+        name: 'リーフレット',
+        path: require('@/assets/img/works/MF92/leaflet.png'),
+        categories: ['DTP'],
+        comment: '公式パンフレットと共に配布したリーフレットです。折り目を生かしたデザインを心掛けました。',
         height: 650
-      }
+      },
     ]
   },
   {
