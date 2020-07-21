@@ -13,7 +13,7 @@
       </p>
     </article-section-back>
     <work-detail-list :items="currentWork.works" />
-    <each-work :work-name="$route.params.work" v-if="currentWork.additional" />
+    <each-work v-if="currentWork.additional" :work-name="$route.params.work" />
   </article-frame>
 </template>
 

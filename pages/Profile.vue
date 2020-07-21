@@ -29,7 +29,9 @@
             <li>Google Apps Script with Typescript (clasp)</li>
           </ul>
         </p>
-        <article-sub-heading class="profile__section">Contact</article-sub-heading>
+        <article-sub-heading class="profile__section">
+          Contact
+        </article-sub-heading>
         <p>
           ご連絡は、メール（ k.hiroki1.732[at]gmail.com, [at]を@に置換してください ）までお願いいたします。
         </p>
