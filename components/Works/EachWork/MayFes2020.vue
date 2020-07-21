@@ -51,6 +51,7 @@ export default class MayFes2020 extends Vue {}
   &__note {
     &--link {
       color: white;
+      text-decoration: none;
     }
 
     &--container {
