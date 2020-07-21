@@ -42,7 +42,7 @@ export default class Search extends Vue {
 
   @Watch('currentCategory')
   onChangeCategory () {
-    window.scrollTo(0,0)
+    window.scrollTo(0, 0)
   }
 }
 </script>
