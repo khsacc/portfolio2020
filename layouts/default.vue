@@ -9,7 +9,7 @@
       :style="{objectPosition: `0 ${backgroundObjectPosition}%`}"
       v-on:load="onImageLoaded"
     >
-    <transition name="page" @after-enter="onPageTransition">
+    <transition name="page" @enter="onPageTransition">
       <div :key="$route.path" v-show="imageLoaded">
         <Nuxt class="nuxtpage__eachpage" />
         <footer-design />
@@ -39,7 +39,7 @@ export default class DefaultLayout extends Vue {
   }
 
   public onPageTransition () {
-    window.scroll(0, 0)
+    window.scrollTo(0, 0)
   }
 
   imageLoaded = false
