@@ -6,9 +6,9 @@
     >
       <article-section-back class="profile">
         <p>1999年生まれ、東京大学3年。特に印刷物のデザインが得意です。</p>
-        <h2 class="profile__section">
+        <article-sub-heading class="profile__section">
           Skills
-        </h2>
+        </article-sub-heading>
         <p class="skills">
           <span>DTP</span><br>
           <ul>
@@ -29,13 +29,13 @@
             <li>Google Apps Script with Typescript (clasp)</li>
           </ul>
         </p>
-        <h2 class="profile__section">Contact</h2>
+        <article-sub-heading class="profile__section">Contact</article-sub-heading>
         <p>
           ご連絡は、メール（ k.hiroki1.732[at]gmail.com, [at]を@に置換してください ）までお願いいたします。
         </p>
-        <h2 class="profile__section">
+        <article-sub-heading class="profile__section">
           制限を料理する
-        </h2>
+        </article-sub-heading>
         <p>
           冊子を中心に、リーフレットやビラなどの印刷物から、大型の案内サイン、そしてWebデザインまで幅広く考えてきました。その中で身に付けてきた技術や、それぞれの場面で役に立つ経験もありますが、何よりも「それぞれの媒体には、それぞれの活かし方がある」という考え方が養われたように思います。
         </p>
@@ -45,9 +45,9 @@
         <p>
           私が比較的得意な紙のデザインでも同じです。形や大きさはもちろんですが、「リーフレットの折り目をどこにいれるのか」のような問題を、情報策定・ビジュアル・手に取った感覚……と多面的に考えられるところにクリエイティビティがあります。そしてもっと細かいレベルでは、余白の取り方や文字組のパラメータの選択に、その「仕様」を生かすか殺すかという問題が常にある。いかにその紙を手に取ってくださる方々に対して、その媒体・仕様の制限を美味しく料理するか（場合によっては、どのような仕様を選択するか）が、デザイナーとして一番時間をかけてじっくり向き合うべきところなのではないか、と思っています。
         </p>
-        <h2 class="profile__section">
+        <article-sub-heading class="profile__section">
           素材のいかしかた
-        </h2>
+        </article-sub-heading>
         <p>
           このポートフォリオサイトは、ページが細かく分割されており、トップページをまずご覧になった方は、情報の一覧性がなく読みにくい、と思われるかもしれません。それはもっともなご指摘だと思います。しかし、私は訪問者のみなさんにページ遷移をたくさんしていただくという選択をしました。それは、背景の素材を存分にいかすという考えゆえです。
         </p>
@@ -62,9 +62,9 @@
           私の考えるデザインのおもしろさとは、このように、素材をいかした世界観をつくることで、見てくださる方々を引き込むということができるという点にあります。それは、情報の多い紙面や案内サインから、情報の少ないイラストレーションまで同じです。ともすると「装飾」とまとめられてしまう部分かもしれませんが、それは情報伝達において必要な要素である、と考えます。それがグラフィカルにデザインをしてみなさんの前にお見せする、ということの意味ではないでしょうか。
         </p>
 
-        <h2 class="profile__section">
+        <article-sub-heading class="profile__section">
           今後の展望
-        </h2>
+        </article-sub-heading>
         <ul>
           <li>映像制作や、映像を組み込んだWebデザインの可能性を模索したいと考え、勉強中です。</li>
           <li>フロントエンドのフレームワークにはVueを使っていますが、template内での補完が効きにくいことが悩みで、React + tsxも身につけていきたいものです。</li>
@@ -78,13 +78,15 @@
 import { Component, Vue } from 'vue-property-decorator'
 import {
   ArticleFrame,
-  ArticleSectionBack
+  ArticleSectionBack,
+  ArticleSubHeading
 } from '@/components'
 
 @Component({
   components: {
     ArticleFrame,
-    ArticleSectionBack
+    ArticleSectionBack,
+    ArticleSubHeading
   }
 })
 export default class Profile extends Vue {}
@@ -98,8 +100,6 @@ export default class Profile extends Vue {}
 .profile {
   &__section {
     margin-top: 50px;
-    font-family: adobe-garamond-pro, ten-mincho-text;
-    font-weight: 300;
 
     &> span {
       display: inline-block;
