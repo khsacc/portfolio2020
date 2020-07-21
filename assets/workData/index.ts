@@ -5,7 +5,6 @@ export type eachWork = {
   path: NodeRequire,
   categories: string[],
   comment?: string,
-  // width ?: number,
   height ?: number
 }
 
@@ -18,7 +17,8 @@ export type workDatum = {
   info?: string,
   detail: string,
   objectPosition: number,
-  works: eachWork[],
+  additional?: boolean,
+  works: eachWork[]
 }
 
 export const workData:workDatum[] = [
@@ -116,6 +116,7 @@ export const workData:workDatum[] = [
     info: '2020年・共同制作',
     detail: '',
     objectPosition: 70,
+    additional: true,
     works: [
       {
         name: '東京大学新聞 出稿広告',
