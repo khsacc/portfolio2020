@@ -23,7 +23,7 @@ import {
   ArticleSectionBack,
   WorkDetailList
 } from '@/components'
-import { workData, getCategories } from '@/assets/workData'
+import { workData, workDatum, getCategories } from '@/assets/workData'
 
 @Component({
   components: {
@@ -33,16 +33,15 @@ import { workData, getCategories } from '@/assets/workData'
   }
 })
 export default class EachWork extends Vue {
-  public pagePath: string = ''
-  public created () {
-    this.pagePath = this.$route.path
+  public get pagePath ():string {
+    return this.$route.path ? this.$route.path : ''
   }
 
-  public get currentWork () {
+  public get currentWork ():workDatum | undefined {
     return workData.find(work => work.to === this.pagePath)
   }
 
-  public get currentCategories () {
+  public get currentCategories ():string[] | void {
     if (this.currentWork) {
       return getCategories(this.currentWork.works)
     }
