@@ -5,7 +5,6 @@ export type eachWork = {
   path: NodeRequire,
   categories: string[],
   comment?: string,
-  // width ?: number,
   height ?: number
 }
 
@@ -14,11 +13,12 @@ export type workDatum = {
   abstractTitle: string,
   abstractImage: NodeRequire,
   title: string,
-  subTitle: string | null,
+  subTitle?: string,
   info?: string,
   detail: string,
   objectPosition: number,
-  works: eachWork[],
+  additional?: boolean,
+  works: eachWork[]
 }
 
 export const workData:workDatum[] = [
@@ -43,7 +43,7 @@ export const workData:workDatum[] = [
       },
       {
         name: 'デザイン指針 ロゴ部分',
-        path: require('@/assets/img/works/KF70/theme_logo.jpg'),
+        path: require('@/assets/img/works/KF70/theme_logo.png'),
         categories: ['Design Direction', 'Logo'],
         comment: '委員会内の制作リソースとして配布した指針の一部です。単なる図形の組み合わせとして展開するのではなく、「万華鏡」というモチーフを意識し、モチーフをどのような観点から比喩的にとらえているのかを説明し、それぞれのデザイナーが考えられるようなディレクションを目指しました。',
         height: 500
@@ -83,6 +83,31 @@ export const workData:workDatum[] = [
     ]
   },
   {
+    to: '/works/KomabaFes2019pre',
+    abstractTitle: '第70回駒場祭プレサイト',
+    abstractImage: require('@/assets/img/works/KF70pre/abstract.jpg'),
+    title: '第70回駒場祭',
+    subTitle: 'プレサイト',
+    info: '2019年',
+    detail: `プレサイトは、協賛のお願いなどを目的として制作されるウェブサイトであり、テーマが決定する前から制作します。そのため、第70回駒場祭の作品ではありますが、別のページを立てました。
+      このプレサイトの制作は、ウェブデザインの形で関わりました（実装には携わっていません）。情報量が少ないウェブサイトではありますが、学園祭に向けて着実に準備が進んでいるというわくわく感を表現してみました。デザインに充てられる時間も1日程度と短く、また初めてのウェブデザインの作品ではありましたが、こざっぱりとしていて悪くない仕上がりになっていると思っています。`,
+    objectPosition: 90,
+    works: [
+      {
+        name: 'PC・タブレット版デザイン',
+        path: require('@/assets/img/works/KF70pre/wide.jpg'),
+        categories: ['Web'],
+        height: 500
+      },
+      {
+        name: 'スマートフォン版デザイン',
+        path: require('@/assets/img/works/KF70pre/narrow.jpg'),
+        categories: ['Web'],
+        height: 650
+      }
+    ]
+  },
+  {
     to: '/works/MayFes2020',
     abstractTitle: '第93回五月祭「青ク咲ク」',
     abstractImage: require('@/assets/img/works/MF93/abstract.jpg'),
@@ -91,10 +116,17 @@ export const workData:workDatum[] = [
     info: '2020年・共同制作',
     detail: '',
     objectPosition: 70,
+    additional: true,
     works: [
       {
         name: '東京大学新聞 出稿広告',
         path: require('@/assets/img/works/MF93/todai_shimbun.png'),
+        categories: ['DTP'],
+        comment: ''
+      },
+      {
+        name: "学内向け配布資料 表紙",
+        path: require('@/assets/img/works/MF93/almighty_cover.jpg'),
         categories: ['DTP'],
         comment: ''
       }
@@ -138,31 +170,30 @@ export const workData:workDatum[] = [
         comment: '屋内に設置した案内サインです。キャンパスを4つのエリアに分け、それぞれに割り当てられた色をメイン使用して潜在的な案内効果を高めています。このデザインは、各建物内に設置されるサインの「マスターデザイン」であるとともに、実際に設置されたもののひとつでもあります。この建物は特に案内が難しく、地図や文言の配置に心を砕きました。',
         height: 650
       },
+      {
+        name: 'リーフレット',
+        path: require('@/assets/img/works/MF92/leaflet.png'),
+        categories: ['DTP'],
+        comment: '公式パンフレットと共に配布したリーフレットです。折り目を生かしたデザインを心掛けました。',
+        height: 650
+      },
     ]
   },
   {
-    to: '/works/KomabaFes2019pre',
-    abstractTitle: '第70回駒場祭プレサイト',
-    abstractImage: require('@/assets/img/works/KF70pre/abstract.jpg'),
-    title: '第70回駒場祭',
-    subTitle: 'プレサイト',
+    to: '/works/Qtanka2019',
+    abstractTitle: 'Q短歌会機関紙 第2号',
+    abstractImage: require('@/assets/img/works/Q2019/abstract.jpg'),
+    title: 'Q短歌会機関紙 第2号',
     info: '2019年',
-    detail: `プレサイトは、協賛のお願いなどを目的として制作されるウェブサイトであり、テーマが決定する前から制作します。そのため、第70回駒場祭の作品ではありますが、別のページを立てました。
-      このプレサイトの制作は、ウェブデザインの形で関わりました（実装には携わっていません）。情報量が少ないウェブサイトではありますが、学園祭に向けて着実に準備が進んでいるというわくわく感を表現してみました。デザインに充てられる時間も1日程度と短く、また初めてのウェブデザインの作品ではありましたが、こざっぱりとしていて悪くない仕上がりになっていると思っています。`,
-    objectPosition: 90,
+    detail: `学生短歌会の機関誌のDTPを担当しました。作品の都合上お見せできない部分も多く、ここでご紹介できないのが残念ですが、「ことば」を主役としたデザインにじっくり取り組んだのはこれが初めてでした。以前から文字組に関心はもっていましたが、「文字だけでも力強いデザイン要素になる」と改めて感じるきっかけになった作品です。
+    東京大学生協書籍部などで販売されています。`,
+    objectPosition: 60,
     works: [
       {
-        name: 'PC・タブレット版デザイン',
-        path: require('@/assets/img/works/KF70pre/wide.jpg'),
-        categories: ['Web'],
-        height: 500
+        name: '特集紙面',
+        path: require('@/assets/img/works/Q2019/content.png'),
+        categories: ['DTP'],
       },
-      {
-        name: 'スマートフォン版デザイン',
-        path: require('@/assets/img/works/KF70pre/narrow.jpg'),
-        categories: ['Web'],
-        height: 650
-      }
     ]
   }
 ]

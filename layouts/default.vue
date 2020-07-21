@@ -1,15 +1,16 @@
 <template>
   <div>
     <transition name="header__transition">
-      <header-design v-if="$route.path !== '/'" class="header" />
+      <header-design v-if="$route.path !== '/'"  class="header" />
     </transition>
     <img
       class="nuxtpage__background"
       :src="require('@/assets/img/pageBackground.png')"
       :style="{objectPosition: `0 ${backgroundObjectPosition}%`}"
+      v-on:load="onImageLoaded"
     >
-    <transition name="page" @after-enter="onPageTransition">
-      <div :key="$route.path">
+    <transition name="page" @enter="onPageTransition">
+      <div :key="$route.path" v-show="imageLoaded">
         <Nuxt class="nuxtpage__eachpage" />
         <footer-design />
       </div>
@@ -38,8 +39,15 @@ export default class DefaultLayout extends Vue {
   }
 
   public onPageTransition () {
-    window.scroll(0, 0)
+    window.scrollTo(0, 0)
   }
+
+  imageLoaded = false
+
+  public onImageLoaded() {
+    this.imageLoaded = true
+  }
+
 }
 </script>
 
@@ -60,6 +68,23 @@ html {
 *::after {
   box-sizing: border-box;
   margin: 0;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+::selection {
+  background: rgb(115, 157, 172);
+  color: white;
+}
+
+::-moz-selection {
+  background: rgb(115, 157, 172);
+  color: white;
 }
 
 p {
@@ -89,11 +114,13 @@ a[target=_blank] {
   }
 
   &__transition {
-    &-enter-active, &-leave-active {
+    &-enter-active,
+    &-leave-active {
         transition: all 1.3s cubic-bezier(.78,-0.34,.21,1.36);
     }
 
-    &-enter, &-leave-to {
+    &-enter,
+    &-leave-to {
       transform: translateY(-20%);
       opacity: 0;
     }

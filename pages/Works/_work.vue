@@ -13,6 +13,7 @@
       </p>
     </article-section-back>
     <work-detail-list :items="currentWork.works" />
+    <each-work :work-name="$route.params.work" v-if="currentWork.additional" />
   </article-frame>
 </template>
 
@@ -21,28 +22,29 @@ import { Component, Vue } from 'vue-property-decorator'
 import {
   ArticleFrame,
   ArticleSectionBack,
-  WorkDetailList
+  WorkDetailList,
+  EachWork
 } from '@/components'
-import { workData, getCategories } from '@/assets/workData'
+import { workData, workDatum, getCategories } from '@/assets/workData'
 
 @Component({
   components: {
     ArticleFrame,
     ArticleSectionBack,
-    WorkDetailList
+    WorkDetailList,
+    EachWork
   }
 })
-export default class EachWork extends Vue {
-  public pagePath: string = ''
-  public created () {
-    this.pagePath = this.$route.path
+export default class Work extends Vue {
+  public get pagePath ():string {
+    return this.$route.path ? this.$route.path : ''
   }
 
-  public get currentWork () {
+  public get currentWork ():workDatum | undefined {
     return workData.find(work => work.to === this.pagePath)
   }
 
-  public get currentCategories () {
+  public get currentCategories ():string[] | void {
     if (this.currentWork) {
       return getCategories(this.currentWork.works)
     }
