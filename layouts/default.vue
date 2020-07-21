@@ -1,7 +1,7 @@
 <template>
   <div>
     <transition name="header__transition">
-      <header-design v-if="$route.path !== '/'" v-show="imageLoaded"  class="header" />
+      <header-design v-if="$route.path !== '/'"  class="header" />
     </transition>
     <img
       class="nuxtpage__background"
@@ -97,11 +97,13 @@ a[target=_blank] {
   }
 
   &__transition {
-    &-enter-active, &-leave-active {
+    &-enter-active,
+    &-leave-active {
         transition: all 1.3s cubic-bezier(.78,-0.34,.21,1.36);
     }
 
-    &-enter, &-leave-to {
+    &-enter,
+    &-leave-to {
       transform: translateY(-20%);
       opacity: 0;
     }
