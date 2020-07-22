@@ -21,7 +21,6 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import checkBrowser from '@/assets/script/browser'
 import {
   TopToc
 } from '@/components'
