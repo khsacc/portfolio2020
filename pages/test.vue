@@ -1,20 +1,28 @@
 <template>
-  <div id="tar" class="testcontainer">
-    <a @click="scroll">scroll</a>
-    <img
-      class="image"
-      :src="require('@/assets/img/pageBackground.png')"
-    >
+  <div>
+    <!-- <nuxt-link to="" onclick="scrollfunc">
+      scroll
+    </nuxt-link> -->
+    <div id="tar" class="testcontainer">
+      <img
+        class="image"
+        :src="require('@/assets/img/pageBackground.png')"
+      >
+    </div>
     <div id="test1" />
   </div>
 </template>
 
 <script>
+// const scrollfunc = function () { document.getElementById('tar').scrollBy({ top: 500, behavior: 'smooth' }) }
+
 export default {
-  methods: {
-    scroll () {
-      this.$scrollTo('#test1')
-    }
+  mounted () {
+    // this.$scrollTo('#test1')
+    setTimeout(() => {
+      document.getElementById('tar').scrollBy({ top: 1000, behavior: 'smooth' })
+      console.log('scrolled.')
+    }, 1000)
   }
 }
 </script>
