@@ -3,12 +3,12 @@
     <transition name="header__transition">
       <header-design v-if="$route.path !== '/'" id="header" class="header" />
     </transition>
-    <!-- <img
+    <img
       class="nuxtpage__background"
       :src="require('@/assets/img/pageBackground.png')"
       :style="{objectPosition: `0 ${backgroundObjectPosition}%`, transition: 'object-position 1.65s cubic-bezier(.61,0,.17,1)'}"
       @load="onImageLoaded"
-    > -->
+    >
     <transition name="page" @enter="onPageTransition">
       <div :key="$route.path">
         <Nuxt class="nuxtpage__eachpage" />
@@ -36,6 +36,11 @@ export default class DefaultLayout extends Vue {
   public get backgroundObjectPosition () {
     const currentPage = pageData.find(page => page.path === this.$route.path)
     return currentPage ? currentPage.objectPosition : 8
+  }
+
+  public mounted () {
+    const smoothscroll = require('smoothscroll-polyfill')
+    smoothscroll.polyfill()
   }
 
   public onPageTransition () {
