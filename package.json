@@ -1,7 +1,9 @@
 {
-  "name": "Portofolio2020",
+  "name": "portfolio2020",
   "version": "1.0.0",
   "private": true,
+  "author": "Hiroki Kobayashi",
+  "repository": "https://github.com/khsacc/portfolio2020",
   "scripts": {
     "dev": "nuxt-ts",
     "build": "nuxt-ts build",
