@@ -1,6 +1,7 @@
 import { ScrollOptions } from 'vue-scrollto'
 
-export const vueScrolltoConfig: ScrollOptions = {
-  duration: 750,
-  easing: [0.0, 0.2, 0.58, 1.0]
+export const vueScrollToConfig: ScrollOptions = {
+  duration: 1500,
+  // cubic-bezier(.58,0,.16,1)
+  easing: [0.58, 0, 0.16, 1]
 }

@@ -1,4 +1,5 @@
 import { Configuration } from '@nuxt/types'
+import { vueScrollToConfig } from './plugins/vue-scrollto'
 
 const nuxtConfig:Configuration = {
   mode: 'universal',
@@ -8,7 +9,7 @@ const nuxtConfig:Configuration = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: "Hiroki Kobayashi's Design Portfolio" }
+      { hid: 'description', name: 'description', content: 'Hiroki Kobayashi Design Portfolio' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -23,7 +24,6 @@ const nuxtConfig:Configuration = {
   css: [
   ],
   plugins: [
-    '@/plugins/vue-scrollto'
   ],
   components: true,
   buildModules: [
@@ -31,7 +31,8 @@ const nuxtConfig:Configuration = {
     ['@nuxtjs/google-analytics', { id: 'UA-173235491-1' }]
   ],
   modules: [
-    '@nuxtjs/style-resources'
+    '@nuxtjs/style-resources',
+    ['vue-scrollto/nuxt', vueScrollToConfig]
   ],
   styleResources: {
     scss: [

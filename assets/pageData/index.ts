@@ -19,7 +19,7 @@ const otherPageData: pageDatum[] = [
   {
     path: '/profile',
     name: 'Profile',
-    objectPosition: 100,
+    objectPosition: 99.5,
     shownTop: true,
     shownFooter: true
   },
@@ -36,7 +36,7 @@ const otherPageData: pageDatum[] = [
     objectPosition: 55,
     shownTop: false,
     shownFooter: false
-  },
+  }
 ]
 
 const workPageData:pageDatum[] = workData.map(work => ({

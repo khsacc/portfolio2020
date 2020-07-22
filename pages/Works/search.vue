@@ -14,7 +14,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Watch } from 'vue-property-decorator'
+import { Component, Vue } from 'vue-property-decorator'
 import { categorySearch } from '@/assets/workData'
 import {
   ArticleFrame,
@@ -40,10 +40,10 @@ export default class Search extends Vue {
     return this.$route.query.category
   }
 
-  @Watch('currentCategory')
-  onChangeCategory () {
-    window.scrollTo(0, 0)
-  }
+  // @Watch('currentCategory')
+  // onChangeCategory () {
+  //   window.scrollTo(0, 0)
+  // }
 }
 </script>
 

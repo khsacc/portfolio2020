@@ -1,6 +1,7 @@
 // used in the default layout
 import HeaderDesign from './Header/HeaderDesign.vue'
 import FooterDesign from './Footer/FooterDesign.vue'
+import Background from './Background/Background.vue'
 // used in the top page
 import TopToc from './TopPage/TopToc.vue'
 // used in the article pages
@@ -15,10 +16,10 @@ import WorkSearchExample from './Works/WorkSearchExample.vue'
 // used in the EachWork page
 import EachWork from './Works/EachWork'
 
-
 export {
   HeaderDesign,
   FooterDesign,
+  Background,
   TopToc,
   ArticleFrame,
   ArticleSectionBack,
