@@ -1,5 +1,5 @@
 <template>
-  <div v-if="smoothScrollableBrowser">
+  <div v-if="lightrenderable">
     <img
       class="nuxtpage__smooth__background"
       :src="require('@/assets/img/pageBackground.png')"
@@ -71,8 +71,12 @@ export default class Background extends Vue {
 
     public smoothScrollableBrowser = true
 
+    public get lightrenderable () {
+      return this.smoothScrollableBrowser
+    }
+
     public mounted () {
-      this.smoothScrollableBrowser = (() => {
+      const browserChecker = () => {
         if (window) {
           const { browser, machine } = checkBrowser()
           // Apple系の手持ち端末はブラウザにかかわらずNG
@@ -87,7 +91,8 @@ export default class Background extends Vue {
           // 判定不能
           return true
         }
-      })()
+      }
+      this.smoothScrollableBrowser = browserChecker()
 
       // settings around background-image scroll
       this.imageContainer = document.getElementById('nuxtpage__notsmooth__background--container')
