@@ -32,10 +32,9 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator'
+import { Component, Vue } from 'vue-property-decorator'
 import ArticleSectionBack from '@/components/Article/ArticleSectionBack.vue'
 import ArticleSubHeading from '@/components/Article/ArticleSubHeading.vue'
-import { workDatum, getCategories } from '@/assets/workData'
 
 @Component({
   components: {

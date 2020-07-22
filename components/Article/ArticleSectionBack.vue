@@ -5,7 +5,7 @@
       <slot />
     </div>
   </nuxt-link>
-  <div v-else class="section__container"  :style="`background: ${background}`">
+  <div v-else class="section__container" :style="`background: ${background}`">
     <div :style="inlineStyle">
       <slot />
     </div>
@@ -19,7 +19,7 @@ import { Component, Prop, Vue } from 'vue-property-decorator'
 export default class ArticleSectionBack extends Vue {
   @Prop({ type: String, required: false }) public to?: string
   @Prop({ type: Number, required: false, default: 800 }) public maxWidth!: number
-  @Prop({type: String, required: false, default: () => 'rgba(4, 1, 26, 0.35)'}) public background !: string
+  @Prop({ type: String, required: false, default: () => 'rgba(4, 1, 26, 0.35)' }) public background !: string
 
   public get inlineStyle () {
     return `max-width: ${this.maxWidth}px`
