@@ -38,9 +38,9 @@ export default class DefaultLayout extends Vue {
   }
 
   public onPageTransition () {
-    setTimeout(() => {
-      this.$scrollTo('#header')
-    }, 350)
+    // setTimeout(() => {
+    //   this.$scrollTo('#header')
+    // }, 350)
   }
 
   imageLoaded = false

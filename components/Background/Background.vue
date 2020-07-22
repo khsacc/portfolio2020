@@ -47,25 +47,23 @@ export default class Background extends Vue {
       target: T;
     }
 
-    const prevention = (e: HTMLElementEvent<HTMLInputElement>) => {
-      e.preventDefault()
+    const prevention = (event: HTMLElementEvent<HTMLInputElement>) => {
+      event.preventDefault()
     }
 
-    if (target) {
-      // for smartphones and tablets
-      target.addEventListener('touchmove', {
-        handleEvent: (event: HTMLElementEvent<HTMLInputElement>) => {
-          prevention(event)
-        }
-      }, { passive: false })
+    // for smartphones and tablets
+    target.addEventListener('touchmove', {
+      handleEvent: (event: HTMLElementEvent<HTMLInputElement>) => {
+        prevention(event)
+      }
+    }, { passive: false })
 
-      // for PCs
-      target.addEventListener('mousewheel', {
-        handleEvent: (event: HTMLElementEvent<HTMLInputElement>) => {
-          prevention(event)
-        }
-      }, { passive: false })
-    }
+    // for PCs
+    target.addEventListener('mousewheel', {
+      handleEvent: (event: HTMLElementEvent<HTMLInputElement>) => {
+        prevention(event)
+      }
+    }, { passive: false })
   }
 
   scrollImage () {
@@ -82,6 +80,7 @@ export default class Background extends Vue {
       const smoothscroll = require('smoothscroll-polyfill')
       smoothscroll.polyfill()
       this.scrollImage()
+      console.log('mounted!')
     }
   }
 

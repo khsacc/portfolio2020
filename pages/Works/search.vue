@@ -40,10 +40,10 @@ export default class Search extends Vue {
     return this.$route.query.category
   }
 
-  @Watch('currentCategory')
-  onChangeCategory () {
-    window.scrollTo(0, 0)
-  }
+  // @Watch('currentCategory')
+  // onChangeCategory () {
+  //   window.scrollTo(0, 0)
+  // }
 }
 </script>
 
