@@ -21,7 +21,7 @@
 
 <script lang="ts">
 import { Component, Prop, Vue, Watch } from 'vue-property-decorator'
-// import { disableBodyScroll } from 'body-scroll-lock'
+import _ from 'lodash'
 
 @Component
 export default class Background extends Vue {
@@ -40,13 +40,7 @@ export default class Background extends Vue {
     return false
   }
 
-  public get WindowWidth () {
-    return window.innerWidth
-  }
-
-  public get ImageHeight () {
-    return this.WindowWidth * (11319 / 1536) // 実測値
-  }
+  imageContainer: HTMLElement | null = null
 
   preventScroll (target: HTMLElement) {
     interface HTMLElementEvent<T extends HTMLElement> extends Event {
@@ -73,19 +67,18 @@ export default class Background extends Vue {
   }
 
   scrollImage () {
-    const scrollAmount = this.ImageHeight * (this.backgroundObjectPosition / 100)
-    const imageContainer = document.getElementById('nuxtpage__notsmooth__background--container')
-    if (imageContainer) {
-      imageContainer.scrollTo({ top: scrollAmount, behavior: 'smooth' })
-      this.preventScroll(imageContainer)
-    }
+    const scrollAmount = (window.innerWidth * (11319 / 1536)) * (this.backgroundObjectPosition / 100)
+    if (this.imageContainer) { this.imageContainer.scrollTo({ top: scrollAmount, behavior: 'smooth' }) }
   }
 
   public mounted () {
+    this.imageContainer = document.getElementById('nuxtpage__notsmooth__background--container')
     if (!this.smoothScrollableBrowser) {
       const smoothscroll = require('smoothscroll-polyfill')
       smoothscroll.polyfill()
-      this.scrollImage()
+      window.addEventListener('resize', _.throttle(() => this.scrollImage(), 500))
+      setTimeout(this.scrollImage, 600)
+      if (this.imageContainer) { this.preventScroll(this.imageContainer) }
     }
   }
 
