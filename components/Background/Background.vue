@@ -68,11 +68,11 @@ export default class Background extends Vue {
     }
   }
 
-    public smoothScrollableBrowser = true
+    // default 値は false でないと、public mounted 内の HTMLElement の読み込みが間に合わない
+    public smoothScrollableBrowser = false
 
     public get lightrenderable () {
-      // return this.smoothScrollableBrowser
-      return false
+      return this.smoothScrollableBrowser
     }
 
     public mounted () {
