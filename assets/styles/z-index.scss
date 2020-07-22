@@ -1,5 +1,6 @@
 @mixin z-index($element) {
   z-index: map-get((
-    nuxtpage__background: -1
+    nuxtpage__background: -1,
+    loading__animation: 1000000,
   ), $element);
 }

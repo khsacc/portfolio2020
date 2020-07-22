@@ -1,10 +1,11 @@
 <template>
   <div>
+    <loading-animation v-if="!imageLoaded" />
     <transition name="header__transition">
       <header-design v-if="$route.path !== '/'" id="header" class="header" />
     </transition>
     <div class="nuxtpage__background">
-      <background :background-object-position="backgroundObjectPosition" />
+      <background :background-object-position="backgroundObjectPosition" @imageLoaded="onImageLoaded" />
     </div>
     <transition name="page" @enter="onPageTransition">
       <div :key="$route.path" class="content__container">
@@ -21,14 +22,16 @@ import { pageData } from '@/assets/pageData'
 import {
   HeaderDesign,
   FooterDesign,
-  Background
+  Background,
+  LoadingAnimation
 } from '@/components'
 
 @Component({
   components: {
     HeaderDesign,
     FooterDesign,
-    Background
+    Background,
+    LoadingAnimation
   }
 })
 export default class DefaultLayout extends Vue {
@@ -37,16 +40,14 @@ export default class DefaultLayout extends Vue {
     return currentPage ? currentPage.objectPosition : 8
   }
 
-  public onPageTransition () {
-    // setTimeout(() => {
-    //   this.$scrollTo('#header')
-    // }, 350)
-  }
+  public onPageTransition () {}
 
   imageLoaded = false
 
   public onImageLoaded () {
-    this.imageLoaded = true
+    setTimeout(() => {
+      this.imageLoaded = true
+    }, 1000)
   }
 }
 </script>
