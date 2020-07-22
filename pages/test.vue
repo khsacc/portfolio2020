@@ -14,7 +14,8 @@
 </template>
 
 <script>
-// const scrollfunc = function () { document.getElementById('tar').scrollBy({ top: 500, behavior: 'smooth' }) }
+import smoothscroll from 'smoothscroll-polyfill'
+smoothscroll.polyfill()
 
 export default {
   mounted () {
