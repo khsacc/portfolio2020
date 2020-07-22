@@ -1,4 +1,5 @@
 import { Configuration } from '@nuxt/types'
+import { vueScrollToConfig } from './plugins/vue-scrollto'
 
 const nuxtConfig:Configuration = {
   mode: 'universal',
@@ -23,7 +24,6 @@ const nuxtConfig:Configuration = {
   css: [
   ],
   plugins: [
-    '@/plugins/vue-scrollto'
   ],
   components: true,
   buildModules: [
@@ -31,7 +31,8 @@ const nuxtConfig:Configuration = {
     ['@nuxtjs/google-analytics', { id: 'UA-173235491-1' }]
   ],
   modules: [
-    '@nuxtjs/style-resources'
+    '@nuxtjs/style-resources',
+    ['vue-scrollto/nuxt', vueScrollToConfig]
   ],
   styleResources: {
     scss: [
