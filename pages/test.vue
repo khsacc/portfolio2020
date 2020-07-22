@@ -15,11 +15,11 @@
 
 <script>
 import smoothscroll from 'smoothscroll-polyfill'
-smoothscroll.polyfill()
 
 export default {
   mounted () {
     // this.$scrollTo('#test1')
+    smoothscroll.polyfill()
     setTimeout(() => {
       document.getElementById('tar').scrollBy({ top: 1000, behavior: 'smooth' })
       console.log('scrolled.')
