@@ -14,6 +14,7 @@ import WorkDetailList from './Works/WorkDetailList.vue'
 // used in the Works Search page
 import WorkSearchExample from './Works/WorkSearchExample.vue'
 // used in the EachWork page
+import WorkOnGoing from './Works/WorkOnGoing.vue'
 import EachWork from './Works/EachWork'
 
 export {
@@ -27,5 +28,6 @@ export {
   WorkAbstract,
   WorkDetailList,
   WorkSearchExample,
+  WorkOnGoing,
   EachWork
 }

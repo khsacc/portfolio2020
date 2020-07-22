@@ -17,6 +17,7 @@ export type workDatum = {
   info?: string,
   detail: string,
   objectPosition: number,
+  onGoing?: boolean,
   additional?: boolean,
   works: eachWork[]
 }
@@ -116,6 +117,7 @@ export const workData:workDatum[] = [
     info: '2020年・共同制作',
     detail: '',
     objectPosition: 70,
+    onGoing: true,
     additional: true,
     works: [
       {
@@ -125,7 +127,7 @@ export const workData:workDatum[] = [
         comment: ''
       },
       {
-        name: "学内向け配布資料 表紙",
+        name: '学内向け配布資料 表紙',
         path: require('@/assets/img/works/MF93/almighty_cover.jpg'),
         categories: ['DTP'],
         comment: ''
@@ -155,13 +157,13 @@ export const workData:workDatum[] = [
         name: '屋内案内サイン（廊下案内）',
         path: require('@/assets/img/works/MF92/info_2.png'),
         categories: ['Information Sign'],
-        comment: '廊下に設置した、お手洗いや近隣の教室、エレベータなどの位置を示す案内サインです。ともすると、定型用紙に矢印と教室名や「お手洗い」などの文字列を配置して終わりになってしまいがちな廊下案内でしたが、「〈おもしろい〉が交差する」というこの年のテーマに合わせ、45度に交差する特徴的なデザインに仕上げました。また状況によってカードをパタパタと組み合わせていくことで、様々な場所に使えるという柔軟性を持った設計になっています。Twitter上で「テーマに合わせた面白い案内」などと反響もいただき、私自身「うるさくないが目に留まりやすい案内サイン」の一つの完成形だと思っています。',
+        comment: '廊下に設置した、お手洗いや近隣の教室、エレベータなどの位置を示す案内サインです。ともすると、定型用紙に矢印と教室名や「お手洗い」などの文字列を配置して終わりになってしまいがちな廊下案内でしたが、「〈おもしろい〉が交差する」というこの年のテーマに合わせ、45度に交差する特徴的なデザインに仕上げました。また状況によってカードをパタパタと組み合わせていくことで、様々な場所に使えるという柔軟性を持った設計になっています。Twitter上で「テーマに合わせた面白い案内」などと反響もいただき、私自身「うるさくないが目に留まりやすい案内サイン」の一つの完成形だと思っています。'
       },
       {
         name: '屋内案内サイン（廊下案内）',
         path: require('@/assets/img/works/MF92/info_3.jpg'),
         categories: ['Information Sign'],
-        comment: '上記の廊下案内サインを実際に設置した場所の写真です。矢印の方向と紙の角が指し示す方向が一致しており、直感的にわかりやすい案内に仕上がりました。また、45度傾けているという性質上、周囲のビラなどと同化しにくく、実際の紙の面積より広く見えるというのも案内サインとしての設計がうまくいったと感じている点です。',
+        comment: '上記の廊下案内サインを実際に設置した場所の写真です。矢印の方向と紙の角が指し示す方向が一致しており、直感的にわかりやすい案内に仕上がりました。また、45度傾けているという性質上、周囲のビラなどと同化しにくく、実際の紙の面積より広く見えるというのも案内サインとしての設計がうまくいったと感じている点です。'
       },
       {
         name: '屋内案内サイン（階案内）',
@@ -176,7 +178,7 @@ export const workData:workDatum[] = [
         categories: ['DTP'],
         comment: '公式パンフレットと共に配布したリーフレットです。折り目を生かしたデザインを心掛けました。',
         height: 650
-      },
+      }
     ]
   },
   {
@@ -192,8 +194,8 @@ export const workData:workDatum[] = [
       {
         name: '特集紙面',
         path: require('@/assets/img/works/Q2019/content.png'),
-        categories: ['DTP'],
-      },
+        categories: ['DTP']
+      }
     ]
   }
 ]

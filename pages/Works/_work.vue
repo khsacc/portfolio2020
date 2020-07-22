@@ -7,6 +7,7 @@
     :categories="currentCategories"
     :dark-back="true"
   >
+    <work-on-going v-if="currentWork.onGoing" />
     <article-section-back>
       <p v-for="line in currentWork.detail.split('\n')" :key="line">
         {{ line }}
@@ -23,6 +24,7 @@ import {
   ArticleFrame,
   ArticleSectionBack,
   WorkDetailList,
+  WorkOnGoing,
   EachWork
 } from '@/components'
 import { workData, workDatum, getCategories } from '@/assets/workData'
@@ -32,6 +34,7 @@ import { workData, workDatum, getCategories } from '@/assets/workData'
     ArticleFrame,
     ArticleSectionBack,
     WorkDetailList,
+    WorkOnGoing,
     EachWork
   }
 })
