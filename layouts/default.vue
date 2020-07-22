@@ -1,7 +1,7 @@
 <template>
   <div>
     <transition name="header__transition">
-      <header-design v-if="$route.path !== '/'" class="header" />
+      <header-design v-if="$route.path !== '/'" id="header" class="header" />
     </transition>
     <img
       class="nuxtpage__background"
@@ -10,7 +10,7 @@
       @load="onImageLoaded"
     >
     <transition name="page" @enter="onPageTransition">
-      <div v-show="imageLoaded" :key="$route.path">
+      <div :key="$route.path">
         <Nuxt class="nuxtpage__eachpage" />
         <footer-design />
       </div>
@@ -39,7 +39,9 @@ export default class DefaultLayout extends Vue {
   }
 
   public onPageTransition () {
-    window.scrollTo(0, 0)
+    setTimeout(() => {
+      this.$scrollTo('#header')
+    }, 350)
   }
 
   imageLoaded = false
