@@ -4,6 +4,7 @@
       class="nuxtpage__smooth__background"
       :src="require('@/assets/img/pageBackground.png')"
       :style="{objectPosition: `0 ${backgroundObjectPosition}%`}"
+      @load="onImageLoaded"
     >
   </div>
   <div
@@ -14,6 +15,7 @@
     <img
       class="nuxtpage__notsmooth__background--image"
       :src="require('@/assets/img/pageBackground.png')"
+      @load="onImageLoaded"
     >
   </div>
 </template>
@@ -26,6 +28,10 @@ import _ from 'lodash'
 @Component
 export default class Background extends Vue {
   @Prop({ type: Number, required: true, default: () => 8 }) backgroundObjectPosition !: number
+
+  public onImageLoaded () {
+    this.$emit('imageLoaded')
+  }
 
   /**
    * この component は、すべてのページに共通する背景画像の表示を制御するためのものです。

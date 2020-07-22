@@ -2,6 +2,8 @@
 import HeaderDesign from './Header/HeaderDesign.vue'
 import FooterDesign from './Footer/FooterDesign.vue'
 import Background from './Background/Background.vue'
+// used in the loading animation
+import LoadingAnimation from './Loading/LoadingAnimation.vue'
 // used in the top page
 import TopToc from './TopPage/TopToc.vue'
 // used in the article pages
@@ -22,6 +24,7 @@ export {
   HeaderDesign,
   FooterDesign,
   Background,
+  LoadingAnimation,
   TopToc,
   ArticleFrame,
   ArticleSectionBack,
