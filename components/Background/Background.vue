@@ -20,6 +20,8 @@
 </template>
 
 <script lang="ts">
+/* eslint-disable no-unused-vars */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Component, Prop, Vue, Watch } from 'vue-property-decorator'
 import _ from 'lodash'
 
@@ -68,7 +70,36 @@ export default class Background extends Vue {
 
   scrollImage () {
     const scrollAmount = (window.innerWidth * (11319 / 1536)) * (this.backgroundObjectPosition / 100)
-    if (this.imageContainer) { this.imageContainer.scrollTo({ top: scrollAmount, behavior: 'smooth' }) }
+    // const scrollDuration = 500
+    if (this.imageContainer) {
+    //   const targetElement = this.imageContainer
+    //   const currentScroll = this.imageContainer.scrollTop
+    //   const scrollTimes = Math.abs(scrollAmount - currentScroll) / 10
+
+      //   const smoothForwardScroller = (progress:number = 0) => {
+      //     if (scrollAmount - (currentScroll + progress) > 0) {
+      //       setTimeout(() => {
+      //         targetElement.scrollBy({ top: scrollAmount, behavior: 'smooth' })
+      //         smoothForwardScroller(progress + 10)
+      //       }, scrollDuration / scrollTimes)
+      //     }
+      //   }
+      //   const smoothBackScroller = (progress:number = 0) => {
+      //     if (scrollAmount - (currentScroll - progress) < 0) {
+      //       setTimeout(() => {
+      //         targetElement.scrollBy({ top: scrollAmount, behavior: 'smooth' })
+      //         smoothForwardScroller(progress + 10)
+      //       }, scrollDuration / scrollTimes)
+      //     }
+      //   }
+
+      //   if (scrollAmount - currentScroll > 0) {
+      //     smoothForwardScroller()
+      //   } else if (scrollAmount - currentScroll < 0) {
+      //     smoothBackScroller()
+      //   }
+      this.imageContainer.scrollTo({ top: scrollAmount, behavior: 'smooth' })
+    }
   }
 
   public mounted () {
