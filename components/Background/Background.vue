@@ -6,7 +6,12 @@
       :style="{objectPosition: `0 ${backgroundObjectPosition}%`}"
     >
   </div>
-  <div v-else id="nuxtpage__notsmooth__background--container" class="nuxtpage__notsmooth__background--container">
+  <div
+    v-else
+    id="nuxtpage__notsmooth__background--container"
+    class="nuxtpage__notsmooth__background--container"
+    :style="{touchAction: 'none'}"
+  >
     <img
       class="nuxtpage__notsmooth__background--image"
       :src="require('@/assets/img/pageBackground.png')"
