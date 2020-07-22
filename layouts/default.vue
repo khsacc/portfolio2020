@@ -127,6 +127,12 @@ a[target=_blank] {
   }
 }
 
+.content__container {
+  width: 100vw;
+  height: 100vh;
+  overflow: scroll;
+}
+
 .nuxtpage {
   &__background {
     position: fixed;

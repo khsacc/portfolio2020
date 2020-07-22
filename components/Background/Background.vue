@@ -21,6 +21,7 @@
 
 <script lang="ts">
 import { Component, Prop, Vue, Watch } from 'vue-property-decorator'
+import { disableBodyScroll } from 'body-scroll-lock'
 
 @Component
 export default class Background extends Vue {
@@ -48,27 +49,29 @@ export default class Background extends Vue {
   }
 
   preventScroll (target: HTMLElement) {
-    interface HTMLElementEvent<T extends HTMLElement> extends Event {
-      target: T;
-    }
+    // interface HTMLElementEvent<T extends HTMLElement> extends Event {
+    //   target: T;
+    // }
 
-    const prevention = (event: HTMLElementEvent<HTMLInputElement>) => {
-      event.preventDefault()
-    }
+    // const prevention = (event: HTMLElementEvent<HTMLInputElement>) => {
+    //   event.preventDefault()
+    // }
 
-    // for smartphones and tablets
-    target.addEventListener('touchmove', {
-      handleEvent: (event: HTMLElementEvent<HTMLInputElement>) => {
-        prevention(event)
-      }
-    }, { passive: false })
+    // // for smartphones and tablets
+    // target.addEventListener('touchmove', {
+    //   handleEvent: (event: HTMLElementEvent<HTMLInputElement>) => {
+    //     prevention(event)
+    //   }
+    // }, { passive: false })
 
-    // for PCs
-    target.addEventListener('mousewheel', {
-      handleEvent: (event: HTMLElementEvent<HTMLInputElement>) => {
-        prevention(event)
-      }
-    }, { passive: false })
+    // // for PCs
+    // target.addEventListener('mousewheel', {
+    //   handleEvent: (event: HTMLElementEvent<HTMLInputElement>) => {
+    //     prevention(event)
+    //   }
+    // }, { passive: false })
+    disableBodyScroll(target)
+    console.log(target)
   }
 
   scrollImage () {
