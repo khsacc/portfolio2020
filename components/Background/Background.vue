@@ -10,6 +10,7 @@
     <img
       class="nuxtpage__notsmooth__background--image"
       :src="require('@/assets/img/pageBackground.png')"
+      :style="{objectPosition: $route.path === '/' ? `0 ${backgroundObjectPosition}%` : 'unset'}"
     >
   </div>
 </template>
@@ -80,7 +81,6 @@ export default class Background extends Vue {
       const smoothscroll = require('smoothscroll-polyfill')
       smoothscroll.polyfill()
       this.scrollImage()
-      console.log('mounted!')
     }
   }
 
