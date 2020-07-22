@@ -21,16 +21,17 @@ import { Component, Prop, Vue, Watch } from 'vue-property-decorator'
 export default class Background extends Vue {
   @Prop({ type: Number, required: true, default: () => 8 }) backgroundObjectPosition !: number
 
+  /**
+   * この component は、すべてのページに共通する背景画像の表示を制御するためのものです。
+   * ページごとに設定された object-position の値が prop として入力されます。
+   * Chrome / Firefox では、 object-position プロパティに対する transition が効くので、この prop を親である default.vue 側から変更すれば処理は終了です。
+   * 一方、iPhone / iPad の各種ブラウザや Safari においては、上記の transition がうまく機能しません。
+   * この問題を解決するため、上記のブラウザにおいては画像を画面と同じ大きさの div でトリミングしたうえで、 overflow: scroll でページごとの表示位置を制御します。
+   */
+
   public get smoothScrollableBrowser () {
     // 対応していないブラウザ判定をここに書く
     return false
-  }
-
-  public mounted () {
-    if (!this.smoothScrollableBrowser) {
-      const smoothscroll = require('smoothscroll-polyfill')
-      smoothscroll.polyfill()
-    }
   }
 
   public get WindowWidth () {
@@ -41,17 +42,56 @@ export default class Background extends Vue {
     return this.WindowWidth * (11319 / 1536) // 実測値
   }
 
+  preventScroll (target: HTMLElement) {
+    interface HTMLElementEvent<T extends HTMLElement> extends Event {
+      target: T;
+    }
+
+    const prevention = (e: HTMLElementEvent<HTMLInputElement>) => {
+      e.preventDefault()
+    }
+
+    if (target) {
+      // for smartphones and tablets
+      target.addEventListener('touchmove', {
+        handleEvent: (event: HTMLElementEvent<HTMLInputElement>) => {
+          prevention(event)
+        }
+      }, { passive: false })
+
+      // for PCs
+      target.addEventListener('mousewheel', {
+        handleEvent: (event: HTMLElementEvent<HTMLInputElement>) => {
+          prevention(event)
+        }
+      }, { passive: false })
+    }
+  }
+
+  scrollImage () {
+    const scrollAmount = this.ImageHeight * (this.backgroundObjectPosition / 100)
+    const imageContainer = document.getElementById('nuxtpage__notsmooth__background--container')
+    if (imageContainer) {
+      imageContainer.scrollTo({ top: scrollAmount, behavior: 'smooth' })
+      this.preventScroll(imageContainer)
+    }
+  }
+
+  public mounted () {
+    if (!this.smoothScrollableBrowser) {
+      const smoothscroll = require('smoothscroll-polyfill')
+      smoothscroll.polyfill()
+      this.scrollImage()
+    }
+  }
+
   public get currentPath () {
     return this.$route.path
   }
 
   @Watch('currentPath')
-  onPageTransitioin () {
-    const scrollAmount = this.ImageHeight * (this.backgroundObjectPosition / 100)
-    const imageContainer = document.getElementById('nuxtpage__notsmooth__background--container')
-    if (imageContainer) {
-      imageContainer.scrollTo({ top: scrollAmount, behavior: 'smooth' })
-    }
+  onPageTransition () {
+    this.scrollImage()
   }
 }
 </script>
