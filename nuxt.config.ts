@@ -9,7 +9,7 @@ const nuxtConfig:Configuration = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: "Hiroki Kobayashi's Design Portfolio" }
+      { hid: 'description', name: 'description', content: 'Hiroki Kobayashi Design Portfolio' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
