@@ -20,9 +20,8 @@
 </template>
 
 <script lang="ts">
-/* eslint-disable no-unused-vars */
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Component, Prop, Vue, Watch } from 'vue-property-decorator'
+import checkBrowser from '@/assets/script/browser'
 import _ from 'lodash'
 
 @Component
@@ -36,11 +35,6 @@ export default class Background extends Vue {
    * 一方、iPhone / iPad の各種ブラウザや Safari においては、上記の transition がうまく機能しません。
    * この問題を解決するため、上記のブラウザにおいては画像を画面と同じ大きさの div でトリミングしたうえで、 overflow: scroll でページごとの表示位置を制御します。
    */
-
-  public get smoothScrollableBrowser () {
-    // 対応していないブラウザ判定をここに書く
-    return false
-  }
 
   imageContainer: HTMLElement | null = null
 
@@ -70,57 +64,51 @@ export default class Background extends Vue {
 
   scrollImage () {
     const scrollAmount = (window.innerWidth * (11319 / 1536)) * (this.backgroundObjectPosition / 100)
-    // const scrollDuration = 500
     if (this.imageContainer) {
-    //   const targetElement = this.imageContainer
-    //   const currentScroll = this.imageContainer.scrollTop
-    //   const scrollTimes = Math.abs(scrollAmount - currentScroll) / 10
-
-      //   const smoothForwardScroller = (progress:number = 0) => {
-      //     if (scrollAmount - (currentScroll + progress) > 0) {
-      //       setTimeout(() => {
-      //         targetElement.scrollBy({ top: scrollAmount, behavior: 'smooth' })
-      //         smoothForwardScroller(progress + 10)
-      //       }, scrollDuration / scrollTimes)
-      //     }
-      //   }
-      //   const smoothBackScroller = (progress:number = 0) => {
-      //     if (scrollAmount - (currentScroll - progress) < 0) {
-      //       setTimeout(() => {
-      //         targetElement.scrollBy({ top: scrollAmount, behavior: 'smooth' })
-      //         smoothForwardScroller(progress + 10)
-      //       }, scrollDuration / scrollTimes)
-      //     }
-      //   }
-
-      //   if (scrollAmount - currentScroll > 0) {
-      //     smoothForwardScroller()
-      //   } else if (scrollAmount - currentScroll < 0) {
-      //     smoothBackScroller()
-      //   }
       this.imageContainer.scrollTo({ top: scrollAmount, behavior: 'smooth' })
     }
   }
 
-  public mounted () {
-    this.imageContainer = document.getElementById('nuxtpage__notsmooth__background--container')
-    if (!this.smoothScrollableBrowser) {
-      const smoothscroll = require('smoothscroll-polyfill')
-      smoothscroll.polyfill()
-      window.addEventListener('resize', _.throttle(() => this.scrollImage(), 500))
-      setTimeout(this.scrollImage, 600)
-      if (this.imageContainer) { this.preventScroll(this.imageContainer) }
-    }
-  }
+    public smoothScrollableBrowser = true
 
-  public get currentPath () {
-    return this.$route.path
-  }
+    public mounted () {
+      this.smoothScrollableBrowser = (() => {
+        if (window) {
+          const { browser, machine } = checkBrowser()
+          // Apple系の手持ち端末はブラウザにかかわらずNG
+          if (machine === 'iPhone' || machine === 'iPad') {
+            return false
+          } else if (browser === 'Internet Explorer' || browser === 'Edge' || browser === 'Safari') {
+            return false
+          } else {
+            return true
+          }
+        } else {
+          // 判定不能
+          return true
+        }
+      })()
+
+      // settings around background-image scroll
+      this.imageContainer = document.getElementById('nuxtpage__notsmooth__background--container')
+      if (!this.smoothScrollableBrowser) {
+        const smoothscroll = require('smoothscroll-polyfill')
+        smoothscroll.polyfill()
+        window.addEventListener('resize', _.throttle(() => this.scrollImage(), 500))
+        setTimeout(this.scrollImage, 600)
+        if (this.imageContainer) { this.preventScroll(this.imageContainer) }
+      }
+    }
+
+    // for Watcher function
+    public get currentPath () {
+      return this.$route.path
+    }
 
   @Watch('currentPath')
-  onPageTransition () {
-    this.scrollImage()
-  }
+    onPageTransition () {
+      this.scrollImage()
+    }
 }
 </script>
 
