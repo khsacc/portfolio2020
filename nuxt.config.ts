@@ -1,5 +1,6 @@
 import { Configuration } from '@nuxt/types'
-import { vueScrollToConfig } from './plugins/vue-scrollto'
+import { vueScrollToConfig } from './config/vue-scrollto'
+import { ogpMetaConfig } from './config/ogp-meta'
 
 const nuxtConfig:Configuration = {
   mode: 'universal',
@@ -9,7 +10,8 @@ const nuxtConfig:Configuration = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Hiroki Kobayashi Design Portfolio' }
+      { hid: 'description', name: 'description', content: 'Hiroki Kobayashi Design Portfolio' },
+      ...ogpMetaConfig
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
