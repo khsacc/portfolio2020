@@ -11,15 +11,11 @@ export const ogpMetaConfig:MetaPropertyProperty[] = [
   },
   {
     property: 'og: description',
-    content: 'Hiroki Kobayashi \'s design portfolio website.'
+    content: 'Hiroki Kobayashi: DTP and Web design, Frontend Development'
   },
   {
     property: 'og:image',
     content: 'https://khsacc-design.vercel.app/ogp.jpg'
-  },
-  {
-    property: 'og:site_name',
-    content: 'Hiroki Kobayashi Design Portfolio'
   },
   {
     property: 'og:locale',
