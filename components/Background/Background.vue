@@ -70,8 +70,6 @@ export default class Background extends Vue {
         prevention(event)
       }
     }, { passive: false })
-    // disableBodyScroll(target)
-    console.log(target)
   }
 
   scrollImage () {
