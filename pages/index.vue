@@ -12,7 +12,7 @@
         </div>
         <top-toc class="content__toc" />
         <div class="content__introduction">
-          「わくわくさせるクリエイティブ」が合言葉。<br>
+          「わくわくさせるクリエイティブ」が合言葉。とくに紙が好きです。
         </div>
       </div>
     </div>
