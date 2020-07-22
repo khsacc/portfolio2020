@@ -6,7 +6,7 @@
     <img
       class="nuxtpage__background"
       :src="require('@/assets/img/pageBackground.png')"
-      :style="{objectPosition: `0 ${backgroundObjectPosition}%`}"
+      :style="{objectPosition: `0 ${backgroundObjectPosition}%`, transition: 'object-position 1.65s cubic-bezier(.61,0,.17,1)'}"
       @load="onImageLoaded"
     >
     <transition name="page" @enter="onPageTransition">
@@ -137,7 +137,7 @@ a[target=_blank] {
     width: 100%;
     height: 100vh;
     object-fit: cover;
-    transition: object-position 1.65s cubic-bezier(.61,0,.17,1);
+    // transition: object-position 1.65s cubic-bezier(.61,0,.17,1);
 
     @include z-index(nuxtpage__background)
   }
