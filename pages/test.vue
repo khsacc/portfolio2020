@@ -22,7 +22,7 @@ export default {
     setTimeout(() => {
       document.getElementById('tar').scrollBy({ top: 1000, behavior: 'smooth' })
       console.log('scrolled.')
-    }, 1000)
+    }, 5000)
   }
 }
 </script>
