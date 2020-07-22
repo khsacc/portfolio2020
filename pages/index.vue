@@ -12,8 +12,7 @@
         </div>
         <top-toc class="content__toc" />
         <div class="content__introduction">
-          「わくわくさせるクリエイティブ」が合言葉。<br>
-          {{ browser }} {{ machine }}
+          「わくわくさせるクリエイティブ」が合言葉。とくに紙が好きです。
         </div>
       </div>
     </div>
@@ -22,7 +21,6 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import checkBrowser from '@/assets/script/browser'
 import {
   TopToc
 } from '@/components'
@@ -32,15 +30,7 @@ import {
     TopToc
   }
 })
-export default class Index extends Vue {
-  browser:string | undefined = ''
-  machine:string | undefined = ''
-  public mounted () {
-    const kero = checkBrowser()
-    this.browser = kero.browser
-    this.machine = kero.machine
-  }
-}
+export default class Index extends Vue {}
 </script>
 
 <style lang="scss" scoped>
