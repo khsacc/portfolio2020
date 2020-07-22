@@ -27,7 +27,8 @@ const nuxtConfig:Configuration = {
   ],
   components: true,
   buildModules: [
-    '@nuxt/typescript-build'
+    '@nuxt/typescript-build',
+    ['@nuxtjs/google-analytics', { id: 'UA-173235491-1' }]
   ],
   modules: [
     '@nuxtjs/style-resources'
