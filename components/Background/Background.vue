@@ -14,7 +14,6 @@
     <img
       class="nuxtpage__notsmooth__background--image"
       :src="require('@/assets/img/pageBackground.png')"
-      :style="{objectPosition: $route.path === '/' ? `0 ${backgroundObjectPosition}%` : 'unset'}"
     >
   </div>
 </template>
@@ -72,7 +71,8 @@ export default class Background extends Vue {
     public smoothScrollableBrowser = true
 
     public get lightrenderable () {
-      return this.smoothScrollableBrowser
+      // return this.smoothScrollableBrowser
+      return false
     }
 
     public mounted () {
