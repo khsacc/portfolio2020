@@ -10,7 +10,6 @@
     v-else
     id="nuxtpage__notsmooth__background--container"
     class="nuxtpage__notsmooth__background--container"
-    :style="{touchAction: 'none'}"
   >
     <img
       class="nuxtpage__notsmooth__background--image"
