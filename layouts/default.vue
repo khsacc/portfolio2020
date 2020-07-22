@@ -3,14 +3,11 @@
     <transition name="header__transition">
       <header-design v-if="$route.path !== '/'" id="header" class="header" />
     </transition>
-    <img
-      class="nuxtpage__background"
-      :src="require('@/assets/img/pageBackground.png')"
-      :style="{objectPosition: `0 ${backgroundObjectPosition}%`}"
-      @load="onImageLoaded"
-    >
+    <div class="nuxtpage__background">
+      <background :background-object-position="backgroundObjectPosition" />
+    </div>
     <transition name="page" @enter="onPageTransition">
-      <div :key="$route.path">
+      <div :key="$route.path" class="content__container">
         <Nuxt class="nuxtpage__eachpage" />
         <footer-design />
       </div>
@@ -23,13 +20,15 @@ import { Component, Vue } from 'vue-property-decorator'
 import { pageData } from '@/assets/pageData'
 import {
   HeaderDesign,
-  FooterDesign
+  FooterDesign,
+  Background
 } from '@/components'
 
 @Component({
   components: {
     HeaderDesign,
-    FooterDesign
+    FooterDesign,
+    Background
   }
 })
 export default class DefaultLayout extends Vue {
@@ -134,10 +133,6 @@ a[target=_blank] {
     top: 0;
     left: 0;
     display: block;
-    width: 100%;
-    height: 100vh;
-    object-fit: cover;
-    transition: object-position 1.65s cubic-bezier(.61,0,.17,1);
 
     @include z-index(nuxtpage__background)
   }
