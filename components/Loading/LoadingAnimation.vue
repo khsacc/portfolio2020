@@ -2,7 +2,8 @@
   <transition name="loading__transition">
     <div class="loading__container ">
       <div class="loading__clock" />
-      Welcome!
+      Welcome!<br>
+      更新されない場合、画面をリロードしてください
     </div>
   </transition>
 </template>
