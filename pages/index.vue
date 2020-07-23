@@ -12,7 +12,8 @@
         </div>
         <top-toc class="content__toc" />
         <div class="content__introduction">
-          「わくわくさせるクリエイティブ」が合言葉。とくに紙が好きです。
+          「わくわくさせるクリエイティブ」が合言葉。<br>
+          素材を活かした自然なデザインをめざしています。
         </div>
       </div>
     </div>
@@ -104,8 +105,6 @@ export default class Index extends Vue {}
   &__introduction {
     text-align: right;
     margin-bottom: 15vh;
-    font-family: adobe-garamond-pro, ten-mincho-text;
-    font-weight: 300;
   }
 }
 </style>
