@@ -1,7 +1,7 @@
-@mixin fonts($kind) {
-  $fontList: (
-    sans-serif: ('adobe-garamond-pro')
-  );
-
-  font-family: map-get($map: $fontList, $key: $kind);
+@font-face {
+  font-family: 'Glow-SansJ';
+  src: url('https://khsacc-design.vercel.app/GlowSansJ-Compressed-Light.woff') format('woff')
+          url('https://khsacc-design.vercel.app/GlowSansJ-Compressed-ExtraLight.woff') format('woff')
+          url('https://khsacc-design.vercel.app/GlowSansJ-Compressed-Book.woff') format('woff')
+          url('https://khsacc-design.vercel.app/GlowSansJ-Compressed-Medium.woff') format('woff')
 }
