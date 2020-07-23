@@ -60,14 +60,15 @@ export default class LoadingAnimation extends Vue {
     }
     &::before{
       transform-origin:right bottom;
-      border-right:1.5px solid #fde9c3;
-      animation:shorthand .4s infinite linear forwards;
+      border-right:2px solid #fde9c3;
+      animation:longhand .4s infinite linear forwards;
+      transform: translateY(1.5px);
     }
 
     &::after{
       transform-origin:calc(100% - 2px) bottom;
       border-right:3px solid #fde9c3;
-      animation:longhand 1.5s infinite linear forwards;
+      animation:shorthand 1.5s infinite linear forwards;
     }
   }
 
@@ -82,7 +83,7 @@ export default class LoadingAnimation extends Vue {
   }
 }
 
-@keyframes shorthand{
+@keyframes longhand{
   0%{
     transform:rotate(0deg);
   }
@@ -91,12 +92,12 @@ export default class LoadingAnimation extends Vue {
   }
 }
 
-@keyframes longhand{
+@keyframes shorthand{
   0%{
-    transform:translateX(2px) translateZ(0) rotate(0deg);
+    transform:translateX(1.5px) translateZ(0) rotate(0deg);
   }
   100%{
-    transform:translateX(2px) translateZ(0) rotate(360deg);
+    transform:translateX(1.5px) translateZ(0) rotate(360deg);
   }
 }
 </style>

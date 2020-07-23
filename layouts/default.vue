@@ -54,7 +54,7 @@ export default class DefaultLayout extends Vue {
 
 <style lang="scss">
 html {
-  font-family: 'calluna-sans', 'Noto Sans JP', sans-serif;
+  font-family: 'calluna-sans', 'Glow-SansJ', 'ヒカリ角ゴ Compressed', sans-serif;
   font-size: 16px;
   font-weight: 300;
   color: white;
